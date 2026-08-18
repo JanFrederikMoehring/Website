@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forms</title>
+    <title>favourite.de</title>
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-Formular Webseite
+<body style="background-color: #1E434C;">
+<h1 style="color: #C99E10"> <p style="font-family: Limelight" p> What's your favourite food?
 <body>
     
-    <form action="#" method="get">
+    <form method="get">
     
-        <input type="text" name="Age" value="" placeholder="Alter">
-        <input type="submit" value="An JF senden" id="idSubmit">
+        <input type="text" name="Food" value="" placeholder="Pizza...">
+        <input type="submit" value="Send" id="idSubmit"
+        style="background-color:#C99e10; font-family:Roboto; Border:1px">
     </form>
     
+<h3 style="color: #C99E10"> <p style="font-family: Roboto" p>
+
     <?php
 
-    if (empty($_GET['Age'])) {
-        echo "Bitte schreib was";
+    if (empty($_GET['Food'])) {
+        echo "Please fill in the gap";
     } else {
         file_put_contents(
         'Eingabe.txt' ,
-        $_GET['Age'] ,
+        $_GET['Food'] ,
     ) ;
     }
     ?>
