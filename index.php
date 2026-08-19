@@ -35,9 +35,21 @@
 
     $dir = 'C:\Users\***\Desktop\phpFiles';
     $files = scandir($dir);
-    foreach($files as $docs)
-        echo $docs, "<br/>";
+
+    // Datentypen:
+    // String: 'Jesper'
+    // Integers: 123
+    // Floats: 123,12
+    // Booleans: true/false
+    // Arrays: [1, 2, 3] 
     ?>
-    
+
+    <ul>
+        <?php foreach($files as $file): ?>
+            <li><?= $file ?></li>
+            <li><?php echo $file ?></li>
+        <?php endforeach; ?>
+    </ul>
+  
 </body>
 </html>
