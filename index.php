@@ -11,7 +11,7 @@
 <h1 style="color: #C99E10"> <p style="font-family: Limelight" p> What's your favourite food?
 <body>
     
-    <form method="get">
+    <form method="post">
     
         <input type="text" name="Food" value="" placeholder="Pizza...">
         <input type="submit" value="Send" id="idSubmit"
@@ -22,14 +22,22 @@
 
     <?php
 
-    if (empty($_GET['Food'])) {
+    $time = time();
+
+    if (empty($_POST['Food'])) {
         echo "Please fill in the gap";
     } else {
         file_put_contents(
-        'Eingabe.txt' ,
-        $_GET['Food'] ,
+        $time . '.txt' ,
+        $_POST['Food'] ,
     ) ;
     }
+
+    $dir = 'C:\Users\anc\Desktop\phpFiles';
+    $files = scandir($dir);
+    foreach($files as $docs)
+        echo $docs, "<br/>";
     ?>
+    
 </body>
 </html>
