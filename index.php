@@ -33,7 +33,7 @@
     ) ;
     }
 
-    $dir = 'C:\Users\anc\Desktop\phpFiles';
+    $dir = 'C:\Users\***\Desktop\phpFiles';
     $files = scandir($dir);
     foreach($files as $docs)
         echo $docs, "<br/>";
