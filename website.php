@@ -34,9 +34,25 @@
     if (empty($_POST['Food'])) {
         echo "Please fill in the gap";
     } else {
-        file_put_contents(
-        $time . '.txt' ,
-        $_POST['Food'] ,
-    ) ;
+        #file_put_contents(
+        #$time . '.txt' ,
+        #$_POST['Food'] ,
+    #) ;
         echo strrev($_POST['Food']) . ', really?';
     } ;
+    ?>
+    <br>
+    _________________________________________________
+    <br>
+    <style>
+    a:visited, a:visited, a:hover, a:active, a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+</style>
+    <h4 style="color: white"> <p style="font-family: Limelight" p>
+    Visit my
+    <a href="https://github.com/JanFrederikMoehring" ­target="_blank"­>GitHub</a>
+    and my
+    <a href="https://www.linkedin.com/in/jan-frederik-m%C3%B6hring/" ­target="_blank"­>LinkedIn</a>
