@@ -33,7 +33,7 @@
     $time = time();
 
     if (empty($_POST['Food'])) {
-        echo "Please fill in the gap";
+        echo "Please fill in the gap now";
     } else {
         #file_put_contents(
         #$time . '.txt' ,
