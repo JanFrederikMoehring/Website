@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: red;">
+<body style="background-color: #1E434C;">
 <h1 style="color: #C99E10"> <p style="font-family: Limelight" p> What's your favourite food?
 <body>
 
