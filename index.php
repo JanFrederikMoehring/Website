@@ -46,13 +46,14 @@ if (empty($_POST['Food'])) {
 ?>
 
 <?php
+$dbPath = '/var/www/database/database.sqlite';
+
 echo '<pre>';
-echo 'PHP-Datei: ' . __FILE__ . "\n";
-echo 'Datenbank: ' . __DIR__ . '/database.sqlite' . "\n";
-echo 'Existiert: ' . (file_exists(__DIR__ . '/database.sqlite') ? 'JA' : 'NEIN') . "\n";
-echo 'Lesbar: ' . (is_readable(__DIR__ . '/database.sqlite') ? 'JA' : 'NEIN') . "\n";
-echo 'Schreibbar: ' . (is_writable(__DIR__ . '/database.sqlite') ? 'JA' : 'NEIN') . "\n";
+echo 'Existiert: ' . (file_exists($dbPath) ? 'JA' : 'NEIN') . "\n";
+echo 'Lesbar: ' . (is_readable($dbPath) ? 'JA' : 'NEIN') . "\n";
+echo 'Schreibbar: ' . (is_writable($dbPath) ? 'JA' : 'NEIN') . "\n";
 echo '</pre>';
+
 ?>
 
 <br>
