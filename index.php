@@ -57,6 +57,20 @@ _________________________________________________
     <input type="submit" value="Send" id="idSubmit"
         style="background-color:#C99e10; font-family:Roboto; Border:1px">
 
+<?php 
+// Datenbank erstellen
+$db = new PDO('sqlite:database.sqlite');
+
+$stmt = $db->query('SELECT email from users');
+$emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
+?>
+
+    <ul>
+        <?php foreach($emaillist as $customers): ?>
+            <li><?php echo($customers) ?></li>
+        <?php endforeach; ?>
+    </ul>
+
 </form>
 _________________________________________________
 <br>
