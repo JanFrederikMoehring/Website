@@ -93,6 +93,7 @@
             $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
 
             ?>
+            </h3>
 
         <h5>
         <details style='color: #C99E10; font-family: Roboto;'>
@@ -111,7 +112,7 @@
         <br>
         <br>
 
-    </h3>
+    
             <progress
                 value='75'
                 max='100'
