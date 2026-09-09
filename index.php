@@ -113,7 +113,7 @@
         <br>
         <br>
 
-    </h3>
+    
             <progress
                 value='75'
                 max='100'
@@ -123,6 +123,7 @@
             80% of my website completed. Now just do what is written below.
 
     <br>
+    </h3>
 
     <style>
         a:visited, a:visited, a:hover, a:active, a:link {
