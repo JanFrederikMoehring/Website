@@ -63,6 +63,7 @@ $db = new PDO('sqlite:database.sqlite');
 
 $stmt = $db->query('SELECT email from users');
 $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
+var_dump($emaillist);
 ?>
 
     <ul>
