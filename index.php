@@ -84,6 +84,7 @@
                 id='idSubmit'
                 style='background-color:#C99e10; font-family:Roboto; Border:1px'
             >
+            </form>
 
             <?php
 
@@ -103,7 +104,7 @@
                     <li><?php echo($customers) ?></li>
                 <?php endforeach; ?>
             </ul>
-        </form>
+        
         </details>
                 </h4>
 
