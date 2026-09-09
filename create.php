@@ -1,5 +1,5 @@
 <?php
-header('Location: /index.php');
+// header('Location: /index.php');
 
 $email = $_POST['email'];
 $pw = password_hash(($_POST['password']), PASSWORD_DEFAULT);
