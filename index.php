@@ -117,7 +117,7 @@
                 max='100'
                 style='accent-color: #C99E10;'
             ></progress>
-            <h4 style='color: #C99E10; font-family: Roboto;'>
+            <h4 style='display: inline; color: #C99E10; font-family: Roboto;'>
             80% of my website completed. Now just do what is written below.
                 </h4>
 
