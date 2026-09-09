@@ -45,17 +45,6 @@ if (empty($_POST['Food'])) {
 
 ?>
 
-<?php
-$dbPath = '/var/www/database/database.sqlite';
-
-echo '<pre>';
-echo 'Existiert: ' . (file_exists($dbPath) ? 'JA' : 'NEIN') . "\n";
-echo 'Lesbar: ' . (is_readable($dbPath) ? 'JA' : 'NEIN') . "\n";
-echo 'Schreibbar: ' . (is_writable($dbPath) ? 'JA' : 'NEIN') . "\n";
-echo '</pre>';
-
-?>
-
 <br>
 <br>
 _________________________________________________
@@ -120,5 +109,3 @@ _________________________________________________
 
 </body>
 </html>
-
-
