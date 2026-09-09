@@ -8,104 +8,149 @@
 
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 
-    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Limelight&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body style="background-color: #1E434C;">
 
-<h1 style="color: #C99E10; font-family: Limelight;">
-    What's your favourite food?
-</h1>
+    <h1 style="color: #C99E10; font-family: Limelight;">
+        What's your favourite food?
+    </h1>
 
-<form method="post">
+    <form method="post">
 
-    <input type="text" name="Food" value="" placeholder="Pizza...">
+        <input
+            type="text"
+            name="Food"
+            value=""
+            placeholder="Pizza..."
+        >
 
-    <input type="submit" value="Send" id="idSubmit"
-        style="background-color:#C99e10; font-family:Roboto; Border:1px">
+        <input
+            type="submit"
+            value="Send"
+            id="idSubmit"
+            style="background-color:#C99e10; font-family:Roboto; Border:1px"
+        >
 
-</form>
+    </form>
 
-<h3 style="color: #C99E10; font-family: Roboto;">
+    <h3 style="color: #C99E10; font-family: Roboto;">
 
-<?php
+        <?php
 
-$time = time();
+        $time = time();
 
-if (empty($_POST['Food'])) {
-    echo "Please fill in the gap now";
-} else {
-    // file_put_contents(
-    // $time . '.txt' ,
-    // $_POST['Food'] ,
-    // ) ;
-    echo strrev($_POST['Food']) . ', really?';
-}
+        if (empty($_POST['Food'])) {
+            echo "Please fill in the gap now";
+        } else {
+            // file_put_contents(
+            // $time . '.txt' ,
+            // $_POST['Food'] ,
+            // ) ;
+            echo strrev($_POST['Food']) . ', really?';
+        }
 
-?>
+        ?>
 
-<br>
-<br>
-_________________________________________________
-<form action='create.php' method='post'>
+        <br>
+        <br>
 
-    <input type="text" name="email" value="" placeholder="E-Mail">
+        _________________________________________________
 
-    <input type="password" id="pwd" name="password" value="" placeholder="Password">
+        <form action='create.php' method='post'>
 
-    <input type="submit" value="Send" id="idSubmit"
-        style="background-color:#C99e10; font-family:Roboto; Border:1px">
+            <input
+                type="text"
+                name="email"
+                value=""
+                placeholder="E-Mail"
+            >
 
-<?php 
-// Datenbank erstellen
-$db = new PDO('sqlite:/var/www/database/database.sqlite');
+            <input
+                type="password"
+                id="pwd"
+                name="password"
+                value=""
+                placeholder="Password"
+            >
 
-$stmt = $db->query('SELECT email from users');
-$emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
-?>
+            <input
+                type="submit"
+                value="Send"
+                id="idSubmit"
+                style="background-color:#C99e10; font-family:Roboto; Border:1px"
+            >
 
-    <ul>
-        <?php foreach($emaillist as $customers): ?>
-            <li><?php echo($customers) ?></li>
-        <?php endforeach; ?>
-    </ul>
+            <?php
 
-</form>
-_________________________________________________
-<br>
-<br>
+            // Datenbank erstellen
+            $db = new PDO('sqlite:/var/www/database/database.sqlite');
 
-</h3>
+            $stmt = $db->query('SELECT email from users');
+            $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
 
-<details style="color: #C99E10; font-family: Roboto;">
-    <summary>Click here after entering your favourite food</summary>
+            ?>
 
-    <h5>
-        <progress value="75" max="100"
-            style="accent-color: #C99E10;"></progress>
-        80% of my website completed. Now just do what is written below.
-    </h5>
-</details>
+            <ul>
+                <?php foreach($emaillist as $customers): ?>
+                    <li><?php echo($customers) ?></li>
+                <?php endforeach; ?>
+            </ul>
 
-<br>
+        </form>
 
-<style>
-    a:visited, a:visited, a:hover, a:active, a:link {
-        color: white;
-        background-color: transparent;
-        text-decoration: underline;
-    }
-</style>
+        _________________________________________________
 
-<h4 style="color: white; font-family: Limelight;">
+        <br>
+        <br>
 
-    Visit my
-    <a href="https://github.com/JanFrederikMoehring" target="_blank">GitHub</a>
-    and my
-    <a href="https://www.linkedin.com/in/jan-frederikM%C3%B6hring/" target="_blank">LinkedIn</a>
+    </h3>
 
-</h4>
+    <details style="color: #C99E10; font-family: Roboto;">
+        <summary>Click here after entering your favourite food</summary>
+
+        <h5>
+            <progress
+                value="75"
+                max="100"
+                style="accent-color: #C99E10;"
+            ></progress>
+
+            80% of my website completed. Now just do what is written below.
+        </h5>
+    </details>
+
+    <br>
+
+    <style>
+        a:visited, a:visited, a:hover, a:active, a:link {
+            color: white;
+            background-color: transparent;
+            text-decoration: underline;
+        }
+    </style>
+
+    <h4 style="color: white; font-family: Limelight;">
+
+        Visit my
+        <a href="https://github.com/JanFrederikMoehring" target="_blank">
+            GitHub
+        </a>
+        and my
+        <a href="https://www.linkedin.com/in/JanFrederikM%C3%B6hring/" target="_blank">
+            LinkedIn
+        </a>
+
+    </h4>
 
 </body>
+
 </html>
