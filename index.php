@@ -36,10 +36,10 @@ $time = time();
 if (empty($_POST['Food'])) {
     echo "Please fill in the gap now";
 } else {
-    #file_put_contents(
-    #$time . '.txt' ,
-    #$_POST['Food'] ,
-    #) ;
+    // file_put_contents(
+    // $time . '.txt' ,
+    // $_POST['Food'] ,
+    // ) ;
     echo strrev($_POST['Food']) . ', really?';
 }
 
@@ -48,8 +48,16 @@ if (empty($_POST['Food'])) {
 <br>
 <br>
 _________________________________________________
-<br>
-<br>
+<form action='create.php' method='post'>
+
+    <input type="text" name="email" value="" placeholder="E-Mail">
+
+    <input type="password" id="pwd" name="password" value="" placeholder="Password">
+
+    <input type="submit" value="Send" id="idSubmit"
+        style="background-color:#C99e10; font-family:Roboto; Border:1px">
+
+</form>
 _________________________________________________
 <br>
 <br>
