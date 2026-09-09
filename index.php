@@ -69,7 +69,7 @@ _________________________________________________
 
 <?php 
 // Datenbank erstellen
-$db = new PDO('sqlite:/var/www/html/database.sqlite');
+$db = new PDO('sqlite:/var/www/database/database.sqlite');
 
 $stmt = $db->query('SELECT email from users');
 $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
