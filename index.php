@@ -95,17 +95,17 @@
 
             ?>
 
-        
+        <h4>
         <details style='color: #C99E10; font-family: Roboto;'>
-        <summary>Click here after entering your favourite food</summary>
+        <summary>Click here to see the other example e-mails</summary>
             <ul>
                 <?php foreach($emaillist as $customers): ?>
                     <li><?php echo($customers) ?></li>
                 <?php endforeach; ?>
             </ul>
-
         </form>
         </details>
+                </h4>
 
         _________________________________________________
 
@@ -113,7 +113,6 @@
         <br>
 
     </h3>
-        <h5>
             <progress
                 value='75'
                 max='100'
@@ -121,7 +120,6 @@
             ></progress>
 
             80% of my website completed. Now just do what is written below.
-        </h5>
 
     <br>
 
