@@ -46,8 +46,6 @@
 
         <?php
 
-        $time = time();
-
         if (empty($_POST['Food'])) {
             echo 'Please fill in the gap now';
         } else {
@@ -113,17 +111,17 @@
         <br>
         <br>
 
-    
+    </h3>
             <progress
                 value='75'
                 max='100'
                 style='accent-color: #C99E10;'
             ></progress>
-
+            <h3 style='color: #C99E10; font-family: Roboto;'>
             80% of my website completed. Now just do what is written below.
+                </h3>
 
     <br>
-    </h3>
 
     <style>
         a:visited, a:visited, a:hover, a:active, a:link {
