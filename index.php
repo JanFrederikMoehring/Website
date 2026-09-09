@@ -96,7 +96,7 @@
 
             ?>
 
-        <h4>
+        <h5>
         <details style='color: #C99E10; font-family: Roboto;'>
         <summary>Click here to see the other example e-mails</summary>
             <ul>
@@ -106,7 +106,7 @@
             </ul>
         
         </details>
-                </h4>
+                </h5>
 
         _________________________________________________
 
