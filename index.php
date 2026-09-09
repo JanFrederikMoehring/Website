@@ -53,14 +53,13 @@
         }
 
         ?>
-       
-
+    
         <br>
         <br>
-
         _________________________________________________
 
          </h3>
+          <br>
 
         <form action='create.php' method='post'>
 
@@ -97,7 +96,6 @@
 
             ?>
             
-
         <h5>
         <details style='color: #C99E10; font-family: Roboto;'>
         <summary>Click here to see the other example e-mails</summary>
@@ -114,7 +112,6 @@
         _________________________________________________
 
                 </h3>
-        <br>
         <br>
 
     
