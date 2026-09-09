@@ -53,6 +53,7 @@
         }
 
         ?>
+        </h3>
 
         <br>
         <br>
@@ -93,7 +94,7 @@
             $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
 
             ?>
-            </h3>
+            
 
         <h5>
         <details style='color: #C99E10; font-family: Roboto;'>
