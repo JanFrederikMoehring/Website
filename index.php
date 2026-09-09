@@ -95,6 +95,9 @@
 
             ?>
 
+        
+        <details style='color: #C99E10; font-family: Roboto;'>
+        <summary>Click here after entering your favourite food</summary>
             <ul>
                 <?php foreach($emaillist as $customers): ?>
                     <li><?php echo($customers) ?></li>
@@ -102,6 +105,7 @@
             </ul>
 
         </form>
+        </details>
 
         _________________________________________________
 
@@ -109,10 +113,6 @@
         <br>
 
     </h3>
-
-    <details style='color: #C99E10; font-family: Roboto;'>
-        <summary>Click here after entering your favourite food</summary>
-
         <h5>
             <progress
                 value='75'
@@ -122,7 +122,6 @@
 
             80% of my website completed. Now just do what is written below.
         </h5>
-    </details>
 
     <br>
 
