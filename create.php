@@ -11,7 +11,7 @@ $db = new PDO('sqlite:/var/www/database/database.sqlite');
 // Tabelle mit Spalten erstellen
 $db->query('CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    email VARCHAR type UNIQUE,
+    email VARCHAR UNIQUE,
     pw VARCHAR
 )');
 
