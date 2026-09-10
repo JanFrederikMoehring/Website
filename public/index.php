@@ -62,7 +62,7 @@
 
     <br>
 
-    <form action='create.php' method='post'>
+    <form action='/var/www/html/create.php' method='post'>
 
         <input
             type='text'
