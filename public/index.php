@@ -88,11 +88,11 @@
 
     </form>
 
-    <h3 style='color: #C99E10; font-family: Roboto;'>
+    <h4 style='color: #C99E10; font-family: Roboto;'>
     <?php
 
     // Email Error angebem
-    if ($_SERVER['REQUEST_URI'] = '?email=error') {
+    if ($_SERVER['REQUEST_URI'] = '/') {
         echo 'You have to enter a correct email';
     };
 
@@ -103,8 +103,8 @@
     $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
 
     ?>
-    </h3>
-    
+    </h4>
+
     <h5>
 
         <details style='color: #C99E10; font-family: Roboto;'>
