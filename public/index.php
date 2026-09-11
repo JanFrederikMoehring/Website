@@ -167,5 +167,5 @@
 </html>
 
 <?php
-echo(parse_url());
+echo 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 ?>
