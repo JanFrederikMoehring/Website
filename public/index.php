@@ -65,7 +65,7 @@
     <form action='/create.php' method='post'>
 
         <input
-            type='text'
+            type='email'
             name='email'
             value=''
             placeholder='E-Mail (only Example)'
