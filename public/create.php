@@ -19,7 +19,7 @@ $db->query('CREATE TABLE IF NOT EXISTS users (
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo('$email is a valid email adress');
 } else {
-    echo('$email is not a vald email adress');
+    throw new Exception('$email is not a vald email adress');
 };
 
 // Prepared Statements
@@ -33,5 +33,4 @@ $stmt = $db->prepare('INSERT INTO users (
 
 $stmt->bindValue('email', $email);
 $stmt->bindValue('pw', $pw);
-
 $stmt->execute();
