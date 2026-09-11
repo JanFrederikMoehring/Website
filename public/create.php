@@ -1,6 +1,6 @@
 <?php
 
-header('Location: /?email=error');
+header('Location: /');
 
 $email = $_POST['email'];
 $pw = password_hash(($_POST['password']), PASSWORD_DEFAULT);
@@ -22,6 +22,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 } else {
     throw new Exception('$email is not a vald email adress');
     http_build_query($emailerror);
+    header('Location: /?email=error');
 };
 
 // Prepared Statements
