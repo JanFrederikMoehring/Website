@@ -167,5 +167,5 @@
 </html>
 
 <?php
-echo(parse_url);
+echo(parse_url());
 ?>
