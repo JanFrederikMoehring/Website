@@ -24,7 +24,10 @@ $stmt = $pdo->prepare('INSERT INTO users
     :pw
 )');
 
-$stmt->exec();
+$stmt->bindValue('email', $email);
+$stmt->bindValue('pw', $pw);
+
+$stmt->execute();
 
 // Werte in Tabelle einfügen
 // $db->exec("INSERT INTO users (
