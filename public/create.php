@@ -1,7 +1,5 @@
 <?php
 
-header('Location: /');
-
 $email = $_POST['email'];
 $pw = password_hash(($_POST['password']), PASSWORD_DEFAULT);
 
@@ -20,7 +18,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo('$email is a valid email adress');
 } else {
     header('Location: /?email=error');
-    throw new Exception();
+    exit;
 };
 
 // Prepared Statements
@@ -35,3 +33,5 @@ $stmt = $db->prepare('INSERT INTO users (
 $stmt->bindValue('email', $email);
 $stmt->bindValue('pw', $pw);
 $stmt->execute();
+
+header('Location: /');
