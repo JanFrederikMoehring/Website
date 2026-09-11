@@ -90,6 +90,11 @@
 
     <?php
 
+    // Email Error angebem
+    if ($_SERVER['REQUEST_URI'] != '/') {
+        echo 'You have to enter a correct email';
+    };
+
     // Datenbank erstellen
     $db = new PDO('sqlite:/var/www/database/database.sqlite');
 
@@ -166,6 +171,3 @@
 
 </html>
 
-<?php
-echo $_SERVER['REQUEST_URI'];
-?>
