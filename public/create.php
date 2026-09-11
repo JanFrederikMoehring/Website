@@ -16,11 +16,9 @@ $db->query('CREATE TABLE IF NOT EXISTS users (
 )');
 
 // Email Validation
-$emailerror = '?email=error';
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo('$email is a valid email adress');
 } else {
-    http_build_query($emailerror);
     header('Location: /?email=error');
     throw new Exception('$email is not a vald email adress');
 };
