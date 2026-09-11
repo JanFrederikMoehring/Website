@@ -1,6 +1,6 @@
 <?php
 
-header('Location: /index.php');
+header('Location: /?email=error');
 
 $email = $_POST['email'];
 $pw = password_hash(($_POST['password']), PASSWORD_DEFAULT);
@@ -16,7 +16,7 @@ $db->query('CREATE TABLE IF NOT EXISTS users (
 )');
 
 // Email Validation
-$emailerror = '/index.php?email=error';
+$emailerror = '?email=error';
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo('$email is a valid email adress');
 } else {
