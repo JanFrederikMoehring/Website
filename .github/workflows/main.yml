@@ -18,10 +18,12 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
 
       - name: connect and pull
-        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "cd /var/www/html && git checkout main && git pull && exit"
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
+          "cd /var/www/html && git checkout main && git pull && exit"
 
       - name: cleanup
         run: rm -rf ~/.ssh/id_rsa
 
       - name: delete database
-        run: rm -rf /var/www/database/database.sqlite
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          'rm -rf /var/www/database/database.sqlite'
