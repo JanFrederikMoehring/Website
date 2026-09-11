@@ -16,10 +16,12 @@ $db->query('CREATE TABLE IF NOT EXISTS users (
 )');
 
 // Email Validation
+$emailerror = '/index.php?email=error';
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo('$email is a valid email adress');
 } else {
     throw new Exception('$email is not a vald email adress');
+    http_build_query($emailerror);
 };
 
 // Prepared Statements
