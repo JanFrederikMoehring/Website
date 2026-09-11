@@ -165,3 +165,6 @@
 </body>
 
 </html>
+
+<?php
+ech(parse_url);

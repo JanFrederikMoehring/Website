@@ -20,7 +20,7 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo('$email is a valid email adress');
 } else {
     header('Location: /?email=error');
-    throw new Exception('$email is not a vald email adress');
+    throw new Exception();
 };
 
 // Prepared Statements
