@@ -16,7 +16,7 @@ $db->query('CREATE TABLE IF NOT EXISTS users (
 )');
 
 // Prepared Statements
-$stmt = $pdo->prepare('INSERT INTO users (
+$stmt = $db->prepare('INSERT INTO users (
     email,
     pw
 ) VALUES (
