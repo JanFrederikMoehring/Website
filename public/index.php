@@ -92,7 +92,7 @@
     <?php
 
     // Email Error angebem
-    if ($_SERVER['REQUEST_URI'] = '/') {
+    if ($_SERVER['REQUEST_URI'] != '/') {
         echo 'You have to enter a correct email';
     };
 
