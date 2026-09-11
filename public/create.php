@@ -15,11 +15,22 @@ $db->query('CREATE TABLE IF NOT EXISTS users (
     pw VARCHAR
 )');
 
-// Werte in Tabelle einfügen
-$db->exec("INSERT INTO users (
+// Prepared Statements
+$stmt = $pdo->prepare('INSERT INTO users
     email,
     pw
 ) VALUES (
-    '$email',
-    '$pw'
-)");
+    :email,
+    :pw
+)');
+
+$stmt->exec();
+
+// Werte in Tabelle einfügen
+// $db->exec("INSERT INTO users (
+    // email,
+    // pw
+// ) VALUES (
+    // '$email',
+    // '$pw'
+// )");
