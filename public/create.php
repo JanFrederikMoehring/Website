@@ -15,6 +15,13 @@ $db->query('CREATE TABLE IF NOT EXISTS users (
     pw VARCHAR
 )');
 
+// Email Validation
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo('$email is a valid email adress');
+} else {
+    echo('$email is not a vald email adress');
+};
+
 // Prepared Statements
 $stmt = $db->prepare('INSERT INTO users (
     email,
