@@ -20,9 +20,9 @@ $emailerror = '?email=error';
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo('$email is a valid email adress');
 } else {
-    throw new Exception('$email is not a vald email adress');
     http_build_query($emailerror);
     header('Location: /?email=error');
+    throw new Exception('$email is not a vald email adress');
 };
 
 // Prepared Statements
