@@ -28,12 +28,3 @@ $stmt->bindValue('email', $email);
 $stmt->bindValue('pw', $pw);
 
 $stmt->execute();
-
-// Werte in Tabelle einfügen
-// $db->exec("INSERT INTO users (
-    // email,
-    // pw
-// ) VALUES (
-    // '$email',
-    // '$pw'
-// )");
