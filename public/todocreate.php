@@ -7,14 +7,13 @@
 
 include'./../sharedtodo.php';
 
-echo 'PHP funktioniert<br>';
-
 // Tabelle erstellen
 $db->query('CREATE TABLE IF NOT EXISTS todos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     titel TEXT,
     description TEXT,
-    status VARCHAR
+    date TEXT,
+    status TEXT,
 )');
 
 if(isset($_POST['Checkbox'])) {
@@ -23,7 +22,7 @@ if(isset($_POST['Checkbox'])) {
     echo 'Checkbox isnt checked';
 };
 
-// echo($_POST['Checkbox']);
+var_dump($_POST['Checkbox']);
 
 // header('Location: /todo.php');
 ?>
