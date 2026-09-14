@@ -7,6 +7,8 @@
 
 include'./../sharedtodo.php';
 
+echo 'PHP funktioniert<br>';
+
 // Tabelle erstellen
 $db->query('CREATE TABLE IF NOT EXISTS todos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -14,8 +16,6 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     description TEXT,
     status VARCHAR,
 )');
-
-echo 'PHP funktioniert<br>';
 
 if(isset($_POST['Checkbox'])) {
     echo 'Checkbox is checked';
