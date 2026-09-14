@@ -46,16 +46,6 @@ include'./../sharedtodo.php';
         >
         <br>
         
-        <label for="Date">Date</label>
-        <input
-            type='date'
-            id="Date"
-            name="Date"
-            value=''
-            placeholder=""
-        >
-        <br>
-        
         <label for="Checkbox">Done</label>
         <input
             type='checkbox'
