@@ -50,6 +50,7 @@ include'./../sharedtodo.php';
         <input
             type='date'
             id="Date"
+            name="Date"
             value=''
             placeholder=""
         >
@@ -60,7 +61,7 @@ include'./../sharedtodo.php';
             type='checkbox'
             id='Checkbox'
             name='Checkbox'
-            value=''
+            value='true'
             placeholder=''
         >
         <br>
