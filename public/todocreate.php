@@ -15,6 +15,8 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     status VARCHAR,
 )');
 
+echo 'PHP funktioniert<br>';
+
 if(isset($_POST['Checkbox'])) {
     echo 'Checkbox is checked';
 } else {
