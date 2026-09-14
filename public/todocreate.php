@@ -10,4 +10,6 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     status VARCHAR,
 )');
 
+echo($_POST['Checkbox']);
+
 header('Location: /todo.php');
