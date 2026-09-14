@@ -75,6 +75,9 @@ include'./../sharedtodo.php';
     </tr>
 
 <?php
+
+$checked = checked;
+
 $stmt = $db->query('SELECT * FROM todos');
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 ?>
@@ -86,7 +89,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <td><?= $todo['Date'] ?></td>
         <td>
         <input
-            type='checkbox' checked
+            type='checkbox' <?php $checked ?>
             id='Checkbox'
             name='Checkbox'
             value='true'
