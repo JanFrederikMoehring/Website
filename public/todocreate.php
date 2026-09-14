@@ -13,7 +13,7 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     titel TEXT,
     description TEXT,
     date TEXT,
-    status TEXT,
+    status TEXT
 )');
 
 if(isset($_POST['Checkbox'])) {
