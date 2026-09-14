@@ -5,6 +5,8 @@
     
 <?php
 
+$checkbox = isset($_POST['Checkbox']);
+
 include'./../sharedtodo.php';
 
 // Tabelle erstellen
@@ -13,16 +15,16 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     titel TEXT,
     description TEXT,
     date TEXT,
-    status TEXT
+    status INTEGER
 )');
 
-if(isset($_POST['Checkbox'])) {
-    echo 'Checkbox is checked';
-} else {
-    echo 'Checkbox isnt checked';
-};
+// if(isset($_POST['Checkbox'])) {
+//     echo 'Checkbox is checked';
+// } else {
+//     echo 'Checkbox isnt checked';
+// };
 
-var_dump($_POST['Checkbox']);
+var_dump($checkbox);
 
 // header('Location: /todo.php');
 ?>

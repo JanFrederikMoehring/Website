@@ -61,7 +61,7 @@ include'./../sharedtodo.php';
             type='checkbox'
             id='Checkbox'
             name='Checkbox'
-            value='false'
+            value='true'
             placeholder=''
         >
         <br>
