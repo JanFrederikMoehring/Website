@@ -24,7 +24,7 @@
 include'./../sharedtodo.php';
 ?>
 
-    <form action='/todocreate.php' method='post' style='background-color:#C99e10; font-family:Roboto; Border:1px'>
+    <form action='/todocreate.php' method='post'>
 
         <label for="Title">Title</label>
         <input
@@ -33,7 +33,7 @@ include'./../sharedtodo.php';
             name='Title'
             value=''
             placeholder='Title'
-            <!-- style='background-color:#C99e10; font-family:Roboto; Border:1px' --> -->
+            style='background-color:#C99e10; font-family:Roboto; Border:1px'
         >
 
         <label for="Description">Description</label>
@@ -43,7 +43,7 @@ include'./../sharedtodo.php';
             name='Description'
             value=''
             placeholder='Your Description'
-            <!-- style='background-color:#C99e10; font-family:Roboto; Border:1px' -->
+            style='background-color:#C99e10; font-family:Roboto; Border:1px'
         >
 
         <label for="Checkbox">Checkbox</label>
@@ -53,7 +53,7 @@ include'./../sharedtodo.php';
             name='Checkbox'
             value=''
             placeholder=''
-            <!-- style='background-color:#C99e10; font-family:Roboto; Border:1px' -->
+            style='background-color:#C99e10; font-family:Roboto; Border:1px'
         >
 
         <label for="Date">Date</label>
@@ -62,14 +62,14 @@ include'./../sharedtodo.php';
             id="Date"
             value=''
             placeholder=""
-            <!-- style='background-color:#C99e10; font-family:Roboto; Border:1px' -->
+            style='background-color:#C99e10; font-family:Roboto; Border:1px'
         >
 
         <input
             type='submit'
             value='Send'
             id='submit'
-            <!-- style='background-color:#C99e10; font-family:Roboto; Border:1px' -->
+            style='background-color:#C99e10; font-family:Roboto; Border:1px'
         >
 
     </form>
