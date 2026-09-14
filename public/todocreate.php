@@ -5,7 +5,12 @@
     
 <?php
 
-$checkbox = isset($_POST['Checkbox']);
+$Checkbox = [];
+if(isset($_POST['Checkbox'])) {
+    $Checkbox[] = 'offen';
+} else {
+    $Checkbox[] = 'erledigt';
+}
 
 include'./../sharedtodo.php';
 
