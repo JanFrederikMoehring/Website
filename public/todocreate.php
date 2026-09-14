@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+
 <head>
 </head>
-<body style='background-color: #1E434C;'>
-    
+
+<body style="background-color: #1E434C;">
+
 <?php
 
-include'./../sharedtodo.php';
+include './../sharedtodo.php';
 
 // Variablen definieren
 $Title = $_POST['Title'];
@@ -16,7 +18,8 @@ $timestamp = time();
 $Date = date('d.m.Y.', $timestamp);
 
 $Checkbox = '';
-if(isset($_POST['Checkbox'])) {
+
+if (isset($_POST['Checkbox'])) {
     $Checkbox = 'checked';
 } else {
     $Checkbox = '';
@@ -46,7 +49,9 @@ $stmt->execute();
 // var_dump($emaillist);
 
 header('Location: /todo.php');
+
 ?>
 
 </body>
+
 </html>
