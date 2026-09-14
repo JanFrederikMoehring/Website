@@ -17,7 +17,7 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
 
 echo($_POST['Checkbox']);
 
-header('Location: /todo.php');
+// header('Location: /todo.php');
 ?>
 
 </body>
