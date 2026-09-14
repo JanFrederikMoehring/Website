@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body style='background-color: #1E434C;'>
+    
 <?php
 
 include'./../sharedtodo.php';
@@ -13,3 +18,7 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
 echo($_POST['Checkbox']);
 
 header('Location: /todo.php');
+?>
+
+</body>
+</html>
