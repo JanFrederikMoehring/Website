@@ -14,7 +14,7 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     titel TEXT,
     description TEXT,
-    status VARCHAR,
+    status VARCHAR
 )');
 
 if(isset($_POST['Checkbox'])) {
