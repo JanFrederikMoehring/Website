@@ -59,6 +59,7 @@ include'./../sharedtodo.php';
             id="Date"
             value=''
             placeholder=""
+            style='background-color:#C99e10; font-family:Roboto; Border:1px'
         >
 
         <input
