@@ -29,6 +29,7 @@ include'./../sharedtodo.php';
         <label for="Title">Title</label>
         <input
             type='text'
+            id="Title"
             name='Title'
             value=''
             placeholder='Title'
@@ -58,6 +59,13 @@ include'./../sharedtodo.php';
             id="Date"
             value=''
             placeholder=""
+        >
+
+        <input
+            type='submit'
+            value='Send'
+            id='submit'
+            style='background-color:#C99e10; font-family:Roboto; Border:1px'
         >
 
     </form>
