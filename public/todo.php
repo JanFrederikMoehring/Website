@@ -24,7 +24,7 @@
 include'./../sharedtodo.php';
 ?>
 
-    <form action='/todocreate.php' method='post'>
+    <form action='/todocreate.php' method='post' style='color: #C99E10; font-family: Roboto;'>>
 
         <label for="Title">Title</label>
         <input
@@ -34,6 +34,7 @@ include'./../sharedtodo.php';
             value=''
             placeholder='Title'
         >
+        <br>
 
         <label for="Description">Description</label>
         <input
@@ -43,6 +44,7 @@ include'./../sharedtodo.php';
             value=''
             placeholder='Your Description'
         >
+        <br>
 
         <label for="Checkbox">Checkbox</label>
         <input
@@ -52,6 +54,7 @@ include'./../sharedtodo.php';
             value=''
             placeholder=''
         >
+        <br>
 
         <label for="Date">Date</label>
         <input
@@ -60,6 +63,7 @@ include'./../sharedtodo.php';
             value=''
             placeholder=""
         >
+        <br>
 
         <input
             type='submit'
