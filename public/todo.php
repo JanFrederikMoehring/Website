@@ -75,7 +75,7 @@ include'./../sharedtodo.php';
 
     </form>
 
-<table>
+<table style="color: white;">
     <tr>
         <th>ID</th>
         <th>Title</th>
@@ -87,7 +87,6 @@ include'./../sharedtodo.php';
 <?php
 $stmt = $db->query('SELECT * FROM todos');
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    var_dump($todo);
 ?>
 
     <tr>
