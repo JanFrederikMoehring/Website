@@ -33,7 +33,7 @@ include'./../sharedtodo.php';
             name='Title'
             value=''
             placeholder='Title'
-            style='background-color:#C99e10; font-family:Roboto; Border:1px'
+            <!-- style='background-color:#C99e10; font-family:Roboto; Border:1px' -->
         >
 
         <label for="Description">Description</label>
