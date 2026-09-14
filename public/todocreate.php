@@ -49,6 +49,9 @@ $stmt->bindValue('Date', $Date);
 $stmt->bindValue('Status', $Checkbox);
 $stmt->execute();
 
+$stmt = $db->query('SELECT * from todos');
+$emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
+var_dump($emaillist);
 ?>
 
 </body>
