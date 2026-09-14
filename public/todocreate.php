@@ -21,15 +21,6 @@ if(isset($_POST['Checkbox'])) {
     $Checkbox = 'offen';
 };
 
-// Tabelle erstellen
-$db->query('CREATE TABLE IF NOT EXISTS todos (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    Title TEXT,
-    Description TEXT,
-    Date TEXT,
-    Status TEXT
-)');
-
 // Prepared Statements
 $stmt = $db->prepare('INSERT INTO todos (
     Title,
