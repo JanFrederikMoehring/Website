@@ -12,7 +12,8 @@ $Title = $_POST['Title'];
 
 $Description = $_POST['Description'];
 
-$Date = $_POST['Date'];
+$timestamp = time();
+$Date = date('d.m.Y.', $timestamp);
 
 $Checkbox = '';
 if(isset($_POST['Checkbox'])) {
