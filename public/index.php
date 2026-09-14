@@ -167,7 +167,7 @@
             LinkedIn
         </a>
                 
-        </br>
+        </br></br>
 
         <a href='/todo.php'>
             Todo
