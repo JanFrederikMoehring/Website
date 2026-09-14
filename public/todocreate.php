@@ -5,35 +5,50 @@
     
 <?php
 
+include'./../sharedtodo.php';
+
+// Variablen definieren
+$Title = $_POST['Title'];
+
+$Description = $_POST['Description'];
+
+$Date = $_POST['Date'];
+
 $Checkbox = '';
 if(isset($_POST['Checkbox'])) {
     $Checkbox = 'erledigt';
 } else {
     $Checkbox = 'offen';
-}
-
-echo($Checkbox);
-
-include'./../sharedtodo.php';
+};
 
 // Tabelle erstellen
 $db->query('CREATE TABLE IF NOT EXISTS todos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    titel TEXT,
-    description TEXT,
-    date TEXT,
-    status INTEGER
+    Title TEXT,
+    Description TEXT,
+    Date TEXT,
+    Status TEXT
 )');
 
-// if(isset($_POST['Checkbox'])) {
-//     echo 'Checkbox is checked';
-// } else {
-//     echo 'Checkbox isnt checked';
-// };
+// Prepared Statements
+$stmt = $db->prepare('INSERT INTO todos (
+    Title,
+    Description,
+    Date,
+    Status
+) VALUES (
+    :Title,
+    :Description,
+    :Date,
+    :Status
+)');
 
-// var_dump($checkbox);
+$stmt->bindValue('Title', $Title);
+$stmt->bindValue('Description', $Description);
+$stmt->bindValue('Date', $Date);
+$stmt->bindValue('Status', $Checkbox);
+$stmt->execute();
 
-// header('Location: /todo.php');
 ?>
 
 </body>
