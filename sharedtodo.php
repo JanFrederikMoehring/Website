@@ -6,6 +6,9 @@ $db = new PDO('sqlite:/var/www/database/todo.sqlite');
 
 ?>
 
-<a href='/'>
+<h3 style='color: #C99E10;'>
+    <a href="/" style="text-decoration:none">
             ⌂
         </a>
+</h3>
+</br>
