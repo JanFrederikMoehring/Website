@@ -26,6 +26,7 @@ include'./../sharedtodo.php';
 
     <form action='/todocreate.php' method='post'>
 
+        <label for="Title">Title</label>
         <input
             type='text'
             name='Title'
@@ -33,19 +34,30 @@ include'./../sharedtodo.php';
             placeholder='Title'
         >
 
+        <label for="Description">Description</label>
         <input
             type='text'
-            id='pwd'
-            name='password'
+            id="Description"
+            name='Description'
             value=''
-            placeholder='Password'
+            placeholder='Your Description'
         >
 
+        <label for="Checkbox">Checkbox</label>
         <input
-            type='submit'
-            value='Send'
-            id='idSubmit'
-            style='background-color:#C99e10; font-family:Roboto; Border:1px'
+            type='checkbox'
+            id='Checkbox'
+            name='Checkbox'
+            value=''
+            placeholder=''
+        >
+
+        <label for="Date">Date</label>
+        <input
+            type='date'
+            id="Date"
+            value=''
+            placeholder=""
         >
 
     </form>
