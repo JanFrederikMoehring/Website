@@ -5,11 +5,11 @@
     
 <?php
 
-$Checkbox = [];
+$Checkbox = '';
 if(isset($_POST['Checkbox'])) {
-    $Checkbox[] = 'offen';
+    $Checkbox = 'erledigt';
 } else {
-    $Checkbox[] = 'erledigt';
+    $Checkbox = 'offen';
 }
 
 echo($Checkbox);
