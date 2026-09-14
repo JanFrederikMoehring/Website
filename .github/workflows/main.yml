@@ -25,5 +25,9 @@ jobs:
         run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
           'rm -rf /var/www/database/database.sqlite'
 
+      - name: delete todo database
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          'rm -rf /var/www/database/todo.sqlite'
+
       - name: cleanup
         run: rm -rf ~/.ssh/id_rsa
