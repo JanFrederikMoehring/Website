@@ -1,6 +1,6 @@
 <?php
 
-include(sharedtodo.php);
+include'./../sharedtodo.php';
 
 // Tabelle erstellen
 $db->query('CREATE TABLE IF NOT EXISTS todos (

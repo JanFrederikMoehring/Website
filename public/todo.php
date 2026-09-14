@@ -21,10 +21,36 @@
 <body style='background-color: #1E434C;'>
 
 <?php
-include(sharedtodo.php);
-
-
+include'./../sharedtodo.php';
 ?>
+
+    <form action='/todocreate.php' method='post'>
+
+        <input
+            type='text'
+            name='Title'
+            value=''
+            placeholder='Title'
+        >
+
+        <input
+            type='text'
+            id='pwd'
+            name='password'
+            value=''
+            placeholder='Password'
+        >
+
+        <input
+            type='submit'
+            value='Send'
+            id='idSubmit'
+            style='background-color:#C99e10; font-family:Roboto; Border:1px'
+        >
+
+    </form>
+
+
 </body>
 
 </html>
