@@ -17,9 +17,9 @@ $Date = date('d.m.Y.', $timestamp);
 
 $Checkbox = '';
 if(isset($_POST['Checkbox'])) {
-    $Checkbox = 'erledigt';
+    $Checkbox = 'checked';
 } else {
-    $Checkbox = 'offen';
+    $Checkbox = 'unchecked';
 };
 
 // Prepared Statements

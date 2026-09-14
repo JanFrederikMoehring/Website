@@ -89,7 +89,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <td><?= $todo['Date'] ?></td>
         <td>
         <input
-            type='checkbox' <?php $checked ?>
+            type='checkbox' <?= $checked ?>
             id='Checkbox'
             name='Checkbox'
             value='true'
