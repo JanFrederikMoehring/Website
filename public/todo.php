@@ -52,7 +52,7 @@ include'./../sharedtodo.php';
             id='Checkbox'
             name='Checkbox'
             value='true'
-            placeholder='true'
+            placeholder=''
         >
         <br>
 
@@ -84,7 +84,14 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <td><?= $todo['Title'] ?></td>
         <td><?= $todo['Description'] ?></td>
         <td><?= $todo['Date'] ?></td>
-        <td><?= $todo['Status'] ?></td>
+        <td>
+        <input
+            type='checkbox' checked
+            id='Checkbox'
+            name='Checkbox'
+            value='true'
+            placeholder=''
+        ?></td>
     </tr>
 
 <?php } ?>
