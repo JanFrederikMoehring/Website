@@ -15,7 +15,13 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     status VARCHAR,
 )');
 
-echo($_POST['Checkbox']);
+if(isset($_POST['Checkbox'])) {
+    echo 'Checkbox is checked';
+} else {
+    echo 'Checkbox isnt checked';
+};
+
+// echo($_POST['Checkbox']);
 
 // header('Location: /todo.php');
 ?>
