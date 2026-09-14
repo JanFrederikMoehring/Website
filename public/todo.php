@@ -52,7 +52,7 @@ include'./../sharedtodo.php';
             id='Checkbox'
             name='Checkbox'
             value='true'
-            placeholder=''
+            placeholder='true'
         >
         <br>
 
