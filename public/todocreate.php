@@ -40,9 +40,11 @@ $stmt->bindValue('Date', $Date);
 $stmt->bindValue('Status', $Checkbox);
 $stmt->execute();
 
-$stmt = $db->query('SELECT * from todos');
-$emaillist = ($stmt->fetchAll());
-var_dump($emaillist);
+// $stmt = $db->query('SELECT * from todos');
+// $emaillist = ($stmt->fetchAll());
+// var_dump($emaillist);
+
+header('Location: /todo.php');
 ?>
 
 </body>
