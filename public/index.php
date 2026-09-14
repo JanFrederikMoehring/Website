@@ -166,8 +166,10 @@
         <a href='https://www.linkedin.com/in/jan-frederik-möhring' target='_blank'>
             LinkedIn
         </a>
+                
+        </br>
 
-        <a href='/todo.php' target='_blank'>
+        <a href='/todo.php'>
             Todo
         </a>
 
