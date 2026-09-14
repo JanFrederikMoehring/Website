@@ -19,7 +19,7 @@ $Checkbox = '';
 if(isset($_POST['Checkbox'])) {
     $Checkbox = 'checked';
 } else {
-    $Checkbox = 'unchecked';
+    $Checkbox = '';
 };
 
 // Prepared Statements
