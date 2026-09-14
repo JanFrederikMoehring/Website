@@ -50,7 +50,7 @@ $stmt->bindValue('Status', $Checkbox);
 $stmt->execute();
 
 $stmt = $db->query('SELECT * from todos');
-$emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
+$emaillist = ($stmt->fetchAll());
 var_dump($emaillist);
 ?>
 
