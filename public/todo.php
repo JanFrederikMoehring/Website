@@ -76,7 +76,7 @@ include'./../sharedtodo.php';
 
 <?php
 
-$checked = checked;
+$checked = 'checked';
 
 $stmt = $db->query('SELECT * FROM todos');
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
