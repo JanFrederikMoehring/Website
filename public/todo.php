@@ -75,6 +75,30 @@ include'./../sharedtodo.php';
 
     </form>
 
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Date</th>
+        <th>Status</th>
+    </tr>
+
+<?php
+$stmt = $db->query('SELECT * FROM todos');
+while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+?>
+
+    <tr>
+        <td><?= $todo['ID'] ?></td>
+        <td><?= $todo['Title'] ?></td>
+        <td><?= $todo['Description'] ?></td>
+        <td><?= $todo['Date'] ?></td>
+        <td><?= $todo['Status'] ?></td>
+    </tr>
+
+<?php } ?>
+</table>
 
 </body>
 
