@@ -60,7 +60,7 @@ include './../sharedtodo.php';
 
         <br>
 
-        <label for="Checkbox">Done</label>
+        <label for="Checkbox">Status</label>
 
         <input
             type="checkbox"
