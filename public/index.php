@@ -167,7 +167,8 @@
             LinkedIn
         </a>
 
-        <a href='/todo.php'>
+        <a href='/todo.php' target='_blank'>
+            Todo
         </a>
 
     </h4>
