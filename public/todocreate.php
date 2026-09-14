@@ -1,7 +1,6 @@
 <?php
 
-// Datenbank erstellen
-$db = new PDO('sqlite:/var/www/database/todo.sqlite');
+include(sharedtodo.php);
 
 // Tabelle erstellen
 $db->query('CREATE TABLE IF NOT EXISTS todos (

@@ -21,7 +21,7 @@
 <body style='background-color: #1E434C;'>
 
 <?php
-$db = new PDO('sqlite:/var/www/database/todo.sqlite');
+include(sharedtodo.php);
 
 
 ?>
