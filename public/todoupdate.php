@@ -39,35 +39,6 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
         <input type="submit" value="Send" id="submit"
                style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column: 2">
     </form>
-
-    <table style="color:white;">
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Status</th>
-        </tr>
-
-        <tr>
-            <td><?= $todo['id'] ?></td>
-
-            <td><?= $todo['Title'] ?></td>
-
-            <td><?= $todo['Description'] ?></td>
-
-            <td><?= $todo['Date'] ?></td>
-
-            <td>
-                <input
-                    type="checkbox" <?= $checked ?>
-                    id="Checkbox"
-                    name="Checkbox"
-                    value="true"
-                >
-            </td>
-        </tr>
-
 </body>
 
 </html>
