@@ -28,7 +28,7 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
 
     <form class="form" action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
         <label for="Title">Title</label>
-        <input type="text" id="Title" name="Title" placeholder="<?= $todo['Title'] ?>">
+        <input type="text" id="Title" name="Title" value="<?= $todo['Title'] ?>">
 
         <label for="Description">Description</label>
         <input type="text" id="Description" name="Description" placeholder="<?= $todo['Description'] ?>">
