@@ -31,20 +31,6 @@
 include './../sharedtodo.php';
 require_once './../functions.php';
 
-?>
-
-    <!-- <table style="color: white;">
-
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Date</th>
-            <th>Status</th>
-        </tr> -->
-
-<?php
-
 inputForm();
 
 $stmt = $db->query('SELECT * FROM todos');
