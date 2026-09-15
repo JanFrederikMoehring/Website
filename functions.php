@@ -25,7 +25,20 @@ function test() {
 
 
 function inputForm() { ?>
-    <form action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
+
+<style>
+    .form {
+        display: grid;
+        grid-template-columns: 100px 250px;
+        gap: 10px;
+        width: fit-content;
+    }
+    .form label {
+        text-align: right;
+    }
+    </style>
+
+    <form class="form" action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
         <label for="Title">Title</label>
         <input type="text" id="Title" name="Title" placeholder="Title">
 
