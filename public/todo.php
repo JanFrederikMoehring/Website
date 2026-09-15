@@ -57,7 +57,8 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     name="Checkbox"
                     value="true"
                 >
-            </td>⌨</td>
+            </td>
+            <td>⌨</td>
         </tr>
 
 <?php
