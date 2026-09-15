@@ -122,6 +122,8 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 }
 
+test();
+
 ?>
 
     </table>
