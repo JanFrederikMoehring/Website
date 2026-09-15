@@ -26,4 +26,4 @@
 
 <body style="background-color: #1E434C;">
 
-<!-- HTML schließen am Ende noch hinzufügen -->
+<?php
