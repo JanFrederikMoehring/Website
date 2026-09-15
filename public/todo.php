@@ -92,6 +92,8 @@ require_once './../functions.php';
 
 <?php
 
+inputForm();
+
 $stmt = $db->query('SELECT * FROM todos');
 
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -119,7 +121,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
             </td>
             <td><input
             type="submit"
-            value="Send"
+            value="Update"
             id="submit"
             style="background-color:#C99e10; font-family:Roboto; Border:1px">
         </td>

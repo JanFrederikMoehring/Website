@@ -22,3 +22,66 @@ $stmt->execute();}
 function test() {
     echo 'Test';
 }
+
+
+function inputForm() { ?>
+        <form
+        action="/todocreate.php"
+        method="post"
+        style="color: #C99E10; font-family: Roboto;"
+    >
+
+        <label for="Title">Title</label>
+
+        <input
+            type="text"
+            id="Title"
+            name="Title"
+            placeholder="Title"
+        >
+
+        <br>
+
+        <label for="Description">Description</label>
+
+        <input
+            type="text"
+            id="Description"
+            name="Description"
+            placeholder="Your Description"
+        >
+
+        <br>
+
+        <label for="Checkbox">Status</label>
+
+        <input
+            type="checkbox"
+            id="Checkbox"
+            name="Checkbox"
+        >
+
+        <br>
+
+        <input
+            type="submit"
+            value="Send"
+            id="submit"
+            style="background-color:#C99e10; font-family:Roboto; Border:1px"
+        >
+
+    </form>
+
+    <table style="color: white;">
+
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+
+        <?php
+}
+?>
