@@ -4,12 +4,12 @@ include './../sharedhtml.php';
 $Number = $_GET['ID'];
 echo $Number;
 
-$stmt = $db->query('SELECT * FROM todos WHERE rowid (1)');
+$stmt = $db->query('SELECT * FROM todos WHERE id = $Number');
 
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
     $checked = $todo['Status'];
-    $Number = $todo['id']
+    $Number = $todo['id'];
 
 ?>
 
