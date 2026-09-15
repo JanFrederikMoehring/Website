@@ -67,6 +67,8 @@ $stmt->bindValue('Description', $Description);
 $stmt->bindValue('Status', $Checkbox);
 $stmt->execute();
 }
+
+header('Location: /todo.php');
 ?>
 </body>
 
