@@ -57,12 +57,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     name="Checkbox"
                     value="true"
                 >
-            </td>
-            <td><input
-            type="submit"
-            value="Update"
-            id="submit"
-            style="background-color:#C99e10; font-family:Roboto; Border:1px">
+            </td>⌨<td>
         </td>
         </tr>
 
