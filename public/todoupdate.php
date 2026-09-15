@@ -26,7 +26,7 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
     }
     </style>
 
-    <form class="form" action="/todoupdate.php" method="post" style="color:#C99E10; font-family:Roboto;">
+    <form class="form" method="post" style="color:#C99E10; font-family:Roboto;">
         <label for="Title">Title</label>
         <input type="text" id="Title" name="Title" value="<?= $todo['Title'] ?>">
 
