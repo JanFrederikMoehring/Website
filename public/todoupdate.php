@@ -42,6 +42,8 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
 
 <?php
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    
 $Title = $_POST['Title'];
 
 $Description = $_POST['Description'];
@@ -54,20 +56,17 @@ if (isset($_POST['Checkbox'])) {
     $Checkbox = '';
 };
 
-$stmt = $db->prepare('UPDATE todos WHERE id = $Number (
-    Title,
-    Description,
-    Status
-) VALUES (
-    :Title,
-    :Description,
-    :Status
-)');
+$stmt = $db->prepare("UPDATE todos
+SET Title = :Title,
+    Description = :Description,
+    Status = :Status
+WHERE id = $Number");
 
 $stmt->bindValue('Title', $Title);
 $stmt->bindValue('Description', $Description);
 $stmt->bindValue('Status', $Checkbox);
 $stmt->execute();
+}
 ?>
 </body>
 
