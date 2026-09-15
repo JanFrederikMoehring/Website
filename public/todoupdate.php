@@ -4,7 +4,7 @@ include './../sharedhtml.php';
 $Number = $_GET['ID'];
 echo $Number;
 
-$stmt = $db->query('SELECT * FROM todos WHERE 1');
+$stmt = $db->query('SELECT * FROM todos WHERE id 1');
 
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
@@ -30,7 +30,6 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     value="true"
                 >
             </td>
-            <td><a href="/todoupdate.php/?ID=<?= urlencode($Number)?>" style="text-decoration: none; color: #C99E10;">⌨</a></td>
         </tr>
 
 <?php } ?>
