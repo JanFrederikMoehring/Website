@@ -103,7 +103,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <tr>
             <td><?= $todo['id'] ?></td>
 
-            <td><?= $todo['Title'] ?></td>
+            <td contenteditable="true"><?= $todo['Title'] ?></td>
 
             <td><?= $todo['Description'] ?></td>
 
@@ -122,8 +122,6 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 <?php
 
 }
-
-test();
 
 ?>
 
