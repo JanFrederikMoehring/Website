@@ -22,7 +22,7 @@ function inputForm() { ?>
         <input type="text" id="Description" name="Description" placeholder="Your Description">
 
         <label for="Checkbox">Status</label>
-        <input type="checkbox" id="Checkbox" name="Checkbox" style="align: left">
+        <input type="checkbox" id="Checkbox" name="Checkbox" style="justify-self: start;">
 
         <input type="submit" value="Send" id="submit"
                style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column: 2">
