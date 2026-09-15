@@ -1,7 +1,7 @@
 <?php
 include './../sharedtodo.php';
 include './../sharedhtml.php';
-$Number = $_GET['Number'];
+$Number = $_GET['ID'];
 echo $Number;
 
 ?>
