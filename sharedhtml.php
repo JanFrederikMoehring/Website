@@ -1,4 +1,3 @@
-?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -26,5 +25,3 @@
 </head>
 
 <body style="background-color: #1E434C;">
-
-<?php

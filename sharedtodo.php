@@ -19,4 +19,8 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     <a href="/" style="text-decoration: none; color: #C99E10; font-size: 25px;">
             ⌂
         </a>
+
+    <a href="/.todo" style="text-decoration: none; color: #C99E10; font-size: 25px;">
+            ↺
+        </a>
 <br><br>
