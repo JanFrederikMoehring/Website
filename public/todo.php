@@ -33,7 +33,7 @@ require_once './../functions.php';
 
 ?>
 
-    <table style="color: white;">
+    <!-- <table style="color: white;">
 
         <tr>
             <th>ID</th>
@@ -41,7 +41,7 @@ require_once './../functions.php';
             <th>Description</th>
             <th>Date</th>
             <th>Status</th>
-        </tr>
+        </tr> -->
 
 <?php
 
