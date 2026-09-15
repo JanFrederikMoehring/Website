@@ -105,7 +105,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
             <td contenteditable="true"><?= $todo['Title'] ?></td>
 
-            <td><?= $todo['Description'] ?></td>
+            <td contenteditable="true"><?= $todo['Description'] ?></td>
 
             <td><?= $todo['Date'] ?></td>
 
@@ -117,6 +117,12 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     value="true"
                 >
             </td>
+            <td><input
+            type="submit"
+            value="Send"
+            id="submit"
+            style="background-color:#C99e10; font-family:Roboto; Border:1px">
+        </td>
         </tr>
 
 <?php
