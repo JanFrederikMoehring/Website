@@ -58,7 +58,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     value="true"
                 >
             </td>
-            <td>⌨</td>
+            <td><a href="/todoupdate.php">⌨</a></td>
         </tr>
 
 <?php
