@@ -26,12 +26,12 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
     }
     </style>
 
-    <form class="form" action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
+    <form class="form" action="/todoupdate.php" method="post" style="color:#C99E10; font-family:Roboto;">
         <label for="Title">Title</label>
         <input type="text" id="Title" name="Title" value="<?= $todo['Title'] ?>">
 
         <label for="Description">Description</label>
-        <input type="text" id="Description" name="Description" placeholder="<?= $todo['Description'] ?>">
+        <input type="text" id="Description" name="Description" value="<?= $todo['Description'] ?>">
 
         <label for="Checkbox">Status</label>
         <input type="checkbox" <?= $checked ?> id="Checkbox" name="Checkbox" style="justify-self: start;">
@@ -39,6 +39,36 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
         <input type="submit" value="Send" id="submit"
                style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column: 2">
     </form>
+
+<?php
+
+$Title = $_POST['Title'];
+
+$Description = $_POST['Description'];
+
+$Checkbox = '';
+
+if (isset($_POST['Checkbox'])) {
+    $Checkbox = 'checked';
+} else {
+    $Checkbox = '';
+};
+
+$stmt = $db->prepare('UPDATE todos WHERE id = $Number (
+    Title,
+    Description,
+    Status
+) VALUES (
+    :Title,
+    :Description,
+    :Status
+)');
+
+$stmt->bindValue('Title', $Title);
+$stmt->bindValue('Description', $Description);
+$stmt->bindValue('Status', $Checkbox);
+$stmt->execute();
+?>
 </body>
 
 </html>
