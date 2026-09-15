@@ -1,28 +1,4 @@
 <?php
-function insertData() {
-// Prepared Statements
-$stmt = $db->prepare('INSERT INTO todos (
-    Title,
-    Description,
-    Date,
-    Status
-) VALUES (
-    :Title,
-    :Description,
-    :Date,
-    :Status
-)');
-
-$stmt->bindValue('Title', $Title);
-$stmt->bindValue('Description', $Description);
-$stmt->bindValue('Date', $Date);
-$stmt->bindValue('Status', $Checkbox);
-$stmt->execute();}
-
-function test() {
-    echo 'Test';
-}
-
 
 function inputForm() { ?>
 
@@ -42,17 +18,11 @@ function inputForm() { ?>
         <label for="Title">Title</label>
         <input type="text" id="Title" name="Title" placeholder="Title">
 
-        <br>
-
         <label for="Description">Description</label>
         <input type="text" id="Description" name="Description" placeholder="Your Description">
 
-        <br>
-
         <label for="Checkbox">Status</label>
         <input type="checkbox" id="Checkbox" name="Checkbox">
-
-        <br>
 
         <input type="submit" value="Send" id="submit"
                style="background-color:#C99E10; font-family:Roboto; border:1px">
