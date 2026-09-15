@@ -58,7 +58,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
                     value="true"
                 >
             </td>
-            <td><a href="/todoupdate.php?ID=<?= urlencode($todo['id'])?>" style="text-decoration: none; color: #C99E10;">⌨</a></td>
+            <td><a href="/todoupdate.php/?ID=<?= urlencode($todo['id'])?>" style="text-decoration: none; color: #C99E10;">⌨</a></td>
         </tr>
 
 <?php
