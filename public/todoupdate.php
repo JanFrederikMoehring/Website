@@ -10,7 +10,7 @@ $stmt->execute([$Number]);
 $todo = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $checked = $todo['Status'];
-    $Number = $todo['id'];
+    // $Number = $todo['id'];
 
 ?>
 
