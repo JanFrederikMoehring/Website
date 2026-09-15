@@ -38,6 +38,7 @@ function inputForm() { ?>
             id="Title"
             name="Title"
             placeholder="Title"
+            style="background: transparent;"
         >
 
         <br>
