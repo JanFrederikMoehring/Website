@@ -31,6 +31,13 @@ function inputForm() { ?>
         style="color: #C99E10; font-family: Roboto;"
     >
 
+    <style>.editable {
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: Roboto;
+} </style>
+
         <label for="Title">Title</label>
 
         <input
@@ -38,7 +45,7 @@ function inputForm() { ?>
             id="Title"
             name="Title"
             placeholder="Title"
-            style="background: transparent;"
+            class="editable"
         >
 
         <br>
