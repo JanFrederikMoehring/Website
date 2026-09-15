@@ -7,7 +7,7 @@ echo $Number;
 $stmt = $db->prepare('SELECT * FROM todos WHERE id = ?');
 $stmt->execute([$Number]);
 
-while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+$todo = $stmt->fetch(PDO::FETCH_ASSOC);
 
     $checked = $todo['Status'];
     $Number = $todo['id'];
@@ -32,8 +32,6 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 >
             </td>
         </tr>
-
-<?php } ?>
 
 </body>
 
