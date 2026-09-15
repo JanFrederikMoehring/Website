@@ -4,7 +4,7 @@ include './../sharedhtml.php';
 $Number = $_GET['ID'];
 echo $Number;
 
-$stmt = $db->query('SELECT * FROM todos WHERE id 1');
+$stmt = $db->query('SELECT * FROM todos WHERE rowid (1)');
 
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
