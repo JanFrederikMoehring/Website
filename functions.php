@@ -10,7 +10,7 @@ function inputForm() { ?>
         width: fit-content;
     }
     .form label {
-        text-align: right;
+        text-align: left;
     }
     </style>
 
@@ -25,7 +25,7 @@ function inputForm() { ?>
         <input type="checkbox" id="Checkbox" name="Checkbox">
 
         <input type="submit" value="Send" id="submit"
-               style="background-color:#C99E10; font-family:Roboto; border:1px">
+               style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column: 2">
     </form>
 
     <table style="color:white;">
