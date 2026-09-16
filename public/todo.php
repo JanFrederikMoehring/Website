@@ -43,7 +43,7 @@ require_once __DIR__ . '/../database.php';
                style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column: 2">
     </form>
 
-    <table style="color:black;">
+    <table style="color: #C99E10;">
         <tr>
             <th>ID</th>
             <th>Title</th>
