@@ -18,7 +18,6 @@
 <?php
 
 include './../sharedtodo.php';
-require_once './../functions.php';
 ?>
 
 <style>
