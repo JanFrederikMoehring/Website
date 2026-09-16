@@ -48,7 +48,7 @@ $checked = $todo['Status'];
     <input type="text" id="Description" name="Description" value="<?= $todo['Description'] ?>">
 
     <label for="Checkbox">Status</label>
-    <input type="checkbox" <?= $checked ?> id="Checkbox" name="Checkbox" style="justify-self: start;">
+    <input type="checkbox" <?= $todo['Status'] == 1 ? 'checked' : '' ?> id="Checkbox" name="Checkbox" style="justify-self: start;">
 
     <input type="submit" value="Send" id="submit"
            style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column:2">
@@ -61,13 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $Title = $_POST['Title'];
     $Description = $_POST['Description'];
 
-    $Checkbox = '';
-
-    if (isset($_POST['Checkbox'])) {
-        $Checkbox = 'checked';
-    } else {
-        $Checkbox = '';
-    };
+    $Status = isset($_POST['Checkbox']) ? 1 : 0;
 
     $stmt = $db->prepare("UPDATE todos
         SET Title = :Title,
@@ -77,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $stmt->bindValue('Title', $Title);
     $stmt->bindValue('Description', $Description);
-    $stmt->bindValue('Status', $Checkbox);
+    $stmt->bindValue('Status', $Status);
     $stmt->execute();
 
     header('Location: /todo.php');

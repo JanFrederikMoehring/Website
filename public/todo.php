@@ -23,7 +23,6 @@
 <?php
 
 require_once __DIR__ . '/../database.php';
-isPost();
 ?>
 
 <style>
@@ -68,7 +67,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <td><?= $todo['Date'] ?></td>
 
         <td>
-            <input type="checkbox" <?= $checked === true ? 'checked' : '' ?> id="Checkbox" name="Checkbox" value="true">
+            <input type="checkbox" <?= $todo['Status'] == 1 ? 'checked' : '' ?> disabled>
         </td>
 
         <td>
