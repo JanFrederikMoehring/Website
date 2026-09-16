@@ -78,11 +78,6 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 <?php
 }
-$stmt = $db->query('SELECT * FROM todos');
-
-$todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-var_dump($todos);
 ?>
 
 </table>
