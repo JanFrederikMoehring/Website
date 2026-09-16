@@ -98,7 +98,7 @@
     };
 
     // Datenbank erstellen
-    $db = new PDO('sqlite:' . __DIR__ . './../database/database.sqlite');
+    $db = new PDO('sqlite:' . __DIR__ . '/../database/database.sqlite');
 
     $stmt = $db->query('SELECT email from users');
     $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
