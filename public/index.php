@@ -100,6 +100,13 @@
     // Datenbank erstellen
     $db = new PDO('sqlite:' . __DIR__ . '/../database/database.sqlite');
 
+    // Tabelle mit Spalten erstellen
+    $db->query('CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        email VARCHAR UNIQUE,
+        pw VARCHAR
+)   ');
+
     $stmt = $db->query('SELECT email from users');
     $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
 
