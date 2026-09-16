@@ -15,9 +15,18 @@
 
 <body>
 
+<a href="/" style="text-decoration: none; color: #C99E10; font-size: 25px;">
+        ⌂
+    </a>
+
+<a href="/todo.php" style="text-decoration: none; color: #C99E10; font-size: 25px;">
+        ↺
+    </a>
+<br><br>
+
 <?php
 
-include './../sharedtodo.php';
+require_once __DIR__ . '/../database.php';
 
 $Number = $_GET['ID'];
 
@@ -31,20 +40,7 @@ $checked = $todo['Status'];
 
 ?>
 
-<style>
-    .form {
-        display: grid;
-        grid-template-columns: 100px 250px;
-        gap: 10px;
-        width: fit-content;
-    }
-
-    .form label {
-        text-align: left;
-    }
-</style>
-
-<form class="form" method="post" style="color:#C99E10; font-family:Roboto;">
+<form method="post" style="color:#C99E10; font-family:Roboto;">
     <label for="Title">Title</label>
     <input type="text" id="Title" name="Title" value="<?= $todo['Title'] ?>">
 

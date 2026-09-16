@@ -1,21 +1,34 @@
 <?php
 
-include './../sharedtodo.php';
+require_once __DIR__ . '/../database.php';
+
+// if (isPost() === false) {
+//     header('Location: /todo.php?error=no-post');
+//     exit;
+// }
 
 // Variablen definieren
-$Title = $_POST['Title'];
-$Description = $_POST['Description'];
+$Title = getPostParam('Title');
+$Description = getPostParam('Description');
+$Checked = getPostParam('Checkbox') !== null;
+
+if ($Title === null) {
+    header('Location: /todo.php?error=no-title');
+    exit;
+}
+
+if (strlen($Title) < 3) {
+    header('Location: /todo.php?error=short-title');
+    exit;
+}
 
 $timestamp = time();
 $Date = date('d.m.Y.', $timestamp);
 
-$Checkbox = '';
-
-if (isset($_POST['Checkbox'])) {
-    $Checkbox = 'checked';
-} else {
-    $Checkbox = '';
-};
+var_dump($_POST);
+var_dump(getPostParam('Checkbox'));
+var_dump($Checked);
+exit;
 
 // Prepared Statements
 $stmt = $db->prepare('INSERT INTO todos (
@@ -33,7 +46,7 @@ $stmt = $db->prepare('INSERT INTO todos (
 $stmt->bindValue('Title', $Title);
 $stmt->bindValue('Description', $Description);
 $stmt->bindValue('Date', $Date);
-$stmt->bindValue('Status', $Checkbox);
+$stmt->bindValue('Status', $Checked);
 $stmt->execute();
 
 header('Location: /todo.php');

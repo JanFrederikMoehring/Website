@@ -20,3 +20,21 @@ $db->query('CREATE TABLE IF NOT EXISTS todos (
     Date TEXT,
     Status TEXT
 )');
+
+function isPost(): bool 
+{
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        return true;
+    } else {
+        return false;
+    }
+};
+
+function getPostParam(string $key): null|string
+{
+    if (array_key_exists($key,$_POST) && $_POST[$key] !== '') {
+        return $_POST[$key];
+    } else {
+        return null;
+    }
+}

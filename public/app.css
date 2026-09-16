@@ -1,3 +1,16 @@
 body {
-    background-color: #1E434C;
+    background-color: whitesmoke;
+}
+
+ /* #1E434C */
+
+form {
+    display: grid;
+    grid-template-columns: 100px 250px;
+    gap: 10px;
+    width: fit-content;
+}
+
+form label {
+    text-align: left;
 }

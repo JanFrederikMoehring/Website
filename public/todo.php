@@ -15,38 +15,36 @@
 
 <body>
 
+<a href="/" style="text-decoration: none; color: #C99E10; font-size: 25px;">
+        ⌂
+    </a>
+<br><br>
+
 <?php
 
-include './../sharedtodo.php';
+require_once __DIR__ . '/../database.php';
+isPost();
 ?>
 
 <style>
-    .form {
-        display: grid;
-        grid-template-columns: 100px 250px;
-        gap: 10px;
-        width: fit-content;
-    }
-    .form label {
-        text-align: left;
-    }
+ 
     </style>
 
-    <form class="form" action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
+    <form action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
         <label for="Title">Title</label>
-        <input type="text" id="Title" name="Title" placeholder="Title" minlength="3" required>
+        <input type="text" id="Title" name="Title" placeholder="Title">
 
         <label for="Description">Description</label>
         <input type="text" id="Description" name="Description" placeholder="Your Description">
 
         <label for="Checkbox">Status</label>
-        <input type="checkbox" id="Checkbox" name="Checkbox" style="justify-self: start;">
+        <input type="checkbox" id="Checkbox" name="Checkbox" style="justify-self: start" value="true">
 
         <input type="submit" value="Send" id="submit"
                style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column: 2">
     </form>
 
-    <table style="color:white;">
+    <table style="color:black;">
         <tr>
             <th>ID</th>
             <th>Title</th>
@@ -70,7 +68,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <td><?= $todo['Date'] ?></td>
 
         <td>
-            <input type="checkbox" <?= $checked ?> id="Checkbox" name="Checkbox" value="true">
+            <input type="checkbox" <?= $checked === true ? 'checked' : '' ?> id="Checkbox" name="Checkbox" value="true">
         </td>
 
         <td>
@@ -81,8 +79,14 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
 <?php
 }
+$stmt = $db->query('SELECT * FROM todos');
+
+$todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+var_dump($todos);
 ?>
 
 </table>
 </body>
 </html>
+
