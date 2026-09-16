@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$db = new PDO('sqlite:/var/www/database/todo.sqlite');
+$db = new PDO('sqlite:' . __DIR__ . '/database/database.sqlite');
 
 // Tabelle erstellen
 $db->query('CREATE TABLE IF NOT EXISTS todos (

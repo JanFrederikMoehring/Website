@@ -16,9 +16,10 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet"
     >
+    <link href="/app.css" rel="stylesheet">
 </head>
 
-<body style="background-color: #1E434C;">
+<body>
 
     <h1 style="color: #C99E10; font-family: Limelight;">
         What's your favourite food?
@@ -97,7 +98,7 @@
     };
 
     // Datenbank erstellen
-    $db = new PDO('sqlite:/var/www/database/database.sqlite');
+    $db = new PDO('sqlite:' . __DIR__ . '/database/database.sqlite');
 
     $stmt = $db->query('SELECT email from users');
     $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));

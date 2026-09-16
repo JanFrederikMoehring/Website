@@ -9,9 +9,11 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
     <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <link href="/app.css" rel="stylesheet">
 </head>
 
-<body style="background-color: #1E434C;">
+<body>
 
 <?php
 
