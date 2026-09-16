@@ -2,10 +2,10 @@
 
 require_once __DIR__ . '/../database.php';
 
-// if (isPost() === false) {
-//     header('Location: /todo.php?error=no-post');
-//     exit;
-// }
+if (isPost() === false) {
+    header('Location: /todo.php?error=no-post');
+    exit;
+}
 
 // Variablen definieren
 $Title = getPostParam('Title');
@@ -24,11 +24,6 @@ if (strlen($Title) < 3) {
 
 $timestamp = time();
 $Date = date('d.m.Y.', $timestamp);
-
-var_dump($_POST);
-var_dump(getPostParam('Checkbox'));
-var_dump($Checked);
-exit;
 
 // Prepared Statements
 $stmt = $db->prepare('INSERT INTO todos (
