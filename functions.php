@@ -16,7 +16,7 @@ function inputForm() { ?>
 
     <form class="form" action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
         <label for="Title">Title</label>
-        <input type="text" id="Title" name="Title" placeholder="Title">
+        <input type="text" id="Title" name="Title" placeholder="Title" minlenght="3">
 
         <label for="Description">Description</label>
         <input type="text" id="Description" name="Description" placeholder="Your Description">
@@ -37,3 +37,11 @@ function inputForm() { ?>
             <th>Status</th>
         </tr>
 <?php } ?>
+
+
+<?php
+// function inputCheck() {
+//     if ($_POST[''] == empty) {
+//         echo 'You can'
+//     }
+// }
