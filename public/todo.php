@@ -83,4 +83,3 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 </table>
 </body>
 </html>
-
