@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-
-<head>
-</head>
-
-<body style="background-color: #1E434C;">
-
 <?php
 
 include './../sharedtodo.php';
@@ -42,10 +35,6 @@ $stmt->bindValue('Description', $Description);
 $stmt->bindValue('Date', $Date);
 $stmt->bindValue('Status', $Checkbox);
 $stmt->execute();
-
-// $stmt = $db->query('SELECT * from todos');
-// $emaillist = ($stmt->fetchAll());
-// var_dump($emaillist);
 
 header('Location: /todo.php');
 
