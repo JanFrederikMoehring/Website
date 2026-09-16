@@ -16,7 +16,7 @@ function inputForm() { ?>
 
     <form class="form" action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
         <label for="Title">Title</label>
-        <input type="text" id="Title" name="Title" placeholder="Title" minlength="3">
+        <input type="text" id="Title" name="Title" placeholder="Title" minlength="3" required>
 
         <label for="Description">Description</label>
         <input type="text" id="Description" name="Description" placeholder="Your Description">

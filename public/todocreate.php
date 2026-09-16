@@ -11,7 +11,6 @@ include './../sharedtodo.php';
 
 // Variablen definieren
 $Title = $_POST['Title'];
-
 $Description = $_POST['Description'];
 
 $timestamp = time();
@@ -43,6 +42,10 @@ $stmt->bindValue('Description', $Description);
 $stmt->bindValue('Date', $Date);
 $stmt->bindValue('Status', $Checkbox);
 $stmt->execute();
+
+// $stmt = $db->query('SELECT * from todos');
+// $emaillist = ($stmt->fetchAll());
+// var_dump($emaillist);
 
 header('Location: /todo.php');
 
