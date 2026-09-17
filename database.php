@@ -3,9 +3,9 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$db = new PDO('sqlite:/var/www/html/public/database/database.sqlite');
+$db = new PDO('sqlite:' . __DIR__ . '/public/database/database.sqlite');
 
-// $db = new PDO('sqlite:' . __DIR__ . '/public/database/database.sqlite');
+// $db = new PDO('sqlite:/var/www/html/public/database/database.sqlite');
 
 // Users Tabelle erstellen
 $db->query('CREATE TABLE IF NOT EXISTS users (
