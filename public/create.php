@@ -4,17 +4,8 @@ $email = $_POST['email'];
 $pw = password_hash(($_POST['password']), PASSWORD_DEFAULT);
 
 require_once __DIR__ . '/../database.php';
-// // Datenbank erstellen
-// $db = new PDO('sqlite:' . __DIR__ . '/../database/database.sqlite');
 
-// // Tabelle mit Spalten erstellen
-// $db->query('CREATE TABLE IF NOT EXISTS users (
-//     id INTEGER PRIMARY KEY AUTOINCREMENT,
-//     email VARCHAR UNIQUE,
-//     pw VARCHAR
-// )');
-
-// Email Validation
+// Email Validierung
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     echo('$email is a valid email adress');
 } else {
