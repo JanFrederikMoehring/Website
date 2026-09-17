@@ -38,3 +38,9 @@ function getPostParam(string $key): null|string
         return null;
     }
 }
+
+function dd(mixed $value): never
+{
+    var_dump($value);
+    exit;
+}

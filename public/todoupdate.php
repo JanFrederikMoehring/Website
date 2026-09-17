@@ -28,14 +28,15 @@
 
 require_once __DIR__ . '/../database.php';
 
+// ID-Value aus der URL ziehen
 $Number = $_GET['ID'];
 
-$stmt = $db->prepare('SELECT * FROM todos WHERE id = ?');
+// Zur ID gehörende Tabellenspalte mit Prepared Statement auswählen
+$stmt = $db->prepare('SELECT * FROM todos WHERE id = :Number');
 $stmt->execute([$Number]);
 
+// Ausgewählte Spalte liefern
 $todo = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$checked = $todo['Status'];
 
 ?>
 
@@ -55,24 +56,28 @@ $checked = $todo['Status'];
 
 <?php
 
+// Code nur bei Drücken des Buttons ausführen
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    // Variablen die in die Tabelle eingeschrieben werden definieren
     $Title = $_POST['Title'];
     $Description = $_POST['Description'];
-
     $Status = isset($_POST['Checkbox']) ? 1 : 0;
 
+    // Prepared Statements
     $stmt = $db->prepare("UPDATE todos
         SET Title = :Title,
             Description = :Description,
             Status = :Status
         WHERE id = $Number");
 
+    // Daten in Tabelle schreiben
     $stmt->bindValue('Title', $Title);
     $stmt->bindValue('Description', $Description);
     $stmt->bindValue('Status', $Status);
     $stmt->execute();
 
+    // Redirect beim Drücken des Buttons
     header('Location: /todo.php');
 }
 

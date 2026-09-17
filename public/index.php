@@ -92,7 +92,7 @@
     <h4 style="color: #C99E10; font-family: Roboto;">
     <?php
 
-    // Email Error angebem
+    // Email Error angeben
     if ($_SERVER['REQUEST_URI'] != '/') {
         echo 'You have to enter a correct email';
     };

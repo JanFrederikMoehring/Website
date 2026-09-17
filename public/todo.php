@@ -56,7 +56,7 @@ require_once __DIR__ . '/../database.php';
 $stmt = $db->query('SELECT * FROM todos');
 
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    $checked = $todo['Status'];
+    // Variable für Übergabeparameter definieren
     $Number = $todo['id'];
 ?>
 
