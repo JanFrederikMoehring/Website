@@ -46,3 +46,12 @@ function dd(mixed $value): never
     var_dump($value);
     exit;
 }
+
+// function delete(int $number)
+// {
+//    if(array_key_exists('delete', $_POST)) {
+//         $db->query('DELETE FROM todos WHERE ID = $number');
+//         $db->execute();
+//    }
+   
+// }

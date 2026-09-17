@@ -56,15 +56,17 @@ require_once __DIR__ . '/../database.php';
 
 $stmt = $db->query('SELECT * FROM todos');
 
+
+
 while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
     // Variable für Übergabeparameter definieren
-    $Number = $todo['id'];
+    $number = $todo['id'];
 ?>
 
     <tr>
-        <td><?= $todo['id'] ?></td>
-        <td contenteditable="true"><?= $todo['Title'] ?></td>
-        <td contenteditable="true"><?= $todo['Description'] ?></td>
+        <td><?= $Test = $todo['id'] ?></td>
+        <td><?= $todo['Title'] ?></td>
+        <td><?= $todo['Description'] ?></td>
         <td><?= $todo['Date'] ?></td>
 
         <td>
@@ -72,15 +74,24 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         </td>
 
         <td>
-            <a href="/todoupdate.php/?ID=<?= urlencode($Number) ?>"
+            <a href="/todoupdate.php/?ID=<?=urlencode($number) ?>"
                style="text-decoration: none; color: #C99E10;">⌨</a>
+        </td>
+
+         <td>
+            <form method="post" action="/tododelete.php">
+                <input type="hidden" name="delete" value="<?= $number ?>">
+
+                <button type="submit" style="color: #C99E10; background-color: transparent; border: none; cursor: pointer;">
+                    🗑
+                </button>
+            </form>
         </td>
     </tr>
 
 <?php
 }
 ?>
-
 </table>
 </body>
 </html>
