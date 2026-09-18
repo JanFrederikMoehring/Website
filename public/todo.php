@@ -74,12 +74,12 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         </td>
 
         <td>
-            <a href="/todoupdate.php/?ID=<?=urlencode($number) ?>"
+            <a href="/todoupdate.php?id=<?=urlencode($number) ?>"
                style="text-decoration: none; color: #C99E10;">⌨</a>
         </td>
 
          <td>
-            <a href="/tododelete.php/?ID=<?=urlencode($number) ?>"
+            <a href="/tododelete.php?id=<?=urlencode($number) ?>"
                style="text-decoration: none; color: #C99E10;">🗑</a>
         </td>
     </tr>

@@ -28,7 +28,7 @@
 <?php
 require_once __DIR__ . '/../database.php';
 
-$number = ($_GET['ID']);
+$number = ($_GET['id']);
 
 $confirmation = (isset($_POST['confirmation']));
 
