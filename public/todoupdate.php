@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Variablen die in die Tabelle eingeschrieben werden definieren
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $Status = isset($_POST['checkbox']) ? 1 : 0;
+    $status = isset($_POST['checkbox']) ? 1 : 0;
 
     // Prepared Statements
     $stmt = $db->prepare("UPDATE todos
