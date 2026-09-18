@@ -17,10 +17,10 @@ $db->query('CREATE TABLE IF NOT EXISTS users (
 // To Dos Tabelle erstellen
 $db->query('CREATE TABLE IF NOT EXISTS todos (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    Title TEXT,
-    Description TEXT,
-    Date TEXT,
-    Status TEXT
+    title TEXT,
+    description TEXT,
+    date TEXT,
+    status TEXT
 )');
 
 function isPost(): bool 
@@ -46,12 +46,3 @@ function dd(mixed $value): never
     var_dump($value);
     exit;
 }
-
-// function delete(int $number)
-// {
-//    if(array_key_exists('delete', $_POST)) {
-//         $db->query('DELETE FROM todos WHERE ID = $number');
-//         $db->execute();
-//    }
-   
-// }
