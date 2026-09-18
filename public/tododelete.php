@@ -28,7 +28,7 @@
 <?php
 require_once __DIR__ . '/../database.php';
 
-$number = ($_POST['delete']);
+$number = ($_GET['ID']);
 
 $confirmation = (isset($_POST['confirmation']));
 

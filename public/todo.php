@@ -79,13 +79,8 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         </td>
 
          <td>
-            <form method="post" action="/tododelete.php">
-                <input type="hidden" name="delete" value="<?= $number ?>">
-
-                <button type="submit" style="color: #C99E10; background-color: transparent; border: none; cursor: pointer;">
-                    🗑
-                </button>
-            </form>
+            <a href="/tododelete.php/?ID=<?=urlencode($number) ?>"
+               style="text-decoration: none; color: #C99E10;">🗑</a>
         </td>
     </tr>
 
