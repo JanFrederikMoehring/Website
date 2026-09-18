@@ -9,44 +9,44 @@ if (isPost() === false) {
 }
 
 // Variablen definieren
-$Title = getPostParam('Title');
-$Description = getPostParam('Description');
-$Checked = getPostParam('Checkbox') !== null;
+$title = getPostParam('title');
+$description = getPostParam('description');
+$checked = getPostParam('checkbox') !== null;
 
 // Leeren Title ausschließen
-if ($Title === null) {
+if ($title === null) {
     header('Location: /todo.php?error=no-title');
     exit;
 }
 
 // Zu kurzen Title ausschließen
-if (strlen($Title) < 3) {
+if (strlen($title) < 3) {
     header('Location: /todo.php?error=short-title');
     exit;
 }
 
 // Eingabedatum definieren
 $timestamp = time();
-$Date = date('d.m.Y.', $timestamp);
+$date = date('d.m.Y.', $timestamp);
 
 // Prepared Statements
 $stmt = $db->prepare('INSERT INTO todos (
-    Title,
-    Description,
-    Date,
-    Status
+    title,
+    description,
+    date,
+    status
 ) VALUES (
-    :Title,
-    :Description,
-    :Date,
-    :Status
+    :title,
+    :description,
+    :date,
+    :status
 )');
 
 // Werte in die Tabelle schreiben
-$stmt->bindValue('Title', $Title);
-$stmt->bindValue('Description', $Description);
-$stmt->bindValue('Date', $Date);
-$stmt->bindValue('Status', $Checked);
+$stmt->bindValue('title', $title);
+$stmt->bindValue('description', $description);
+$stmt->bindValue('date', $date);
+$stmt->bindValue('status', $checked);
 $stmt->execute();
 
 // Redirect

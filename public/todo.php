@@ -31,14 +31,14 @@ require_once __DIR__ . '/../database.php';
     </style>
 
     <form action="/todocreate.php" method="post" style="color:#C99E10; font-family:Roboto;">
-        <label for="Title">Title</label>
-        <input type="text" id="Title" name="Title" placeholder="Title">
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" placeholder="Title">
 
-        <label for="Description">Description</label>
-        <input type="text" id="Description" name="Description" placeholder="Your Description">
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" placeholder="Your Description">
 
-        <label for="Checkbox">Status</label>
-        <input type="checkbox" id="Checkbox" name="Checkbox" style="justify-self: start" value="true">
+        <label for="checkbox">Status</label>
+        <input type="checkbox" id="checkbox" name="checkbox" style="justify-self: start" value="true">
 
         <input type="submit" value="Send" id="submit"
                style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column: 2">
@@ -64,13 +64,13 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
 ?>
 
     <tr>
-        <td><?= $Test = $todo['id'] ?></td>
-        <td><?= $todo['Title'] ?></td>
-        <td><?= $todo['Description'] ?></td>
-        <td><?= $todo['Date'] ?></td>
+        <td><?= $todo['id'] ?></td>
+        <td><?= $todo['title'] ?></td>
+        <td><?= $todo['description'] ?></td>
+        <td><?= $todo['date'] ?></td>
 
         <td>
-            <input type="checkbox" <?= $todo['Status'] == 1 ? 'checked' : '' ?> disabled>
+            <input type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> disabled>
         </td>
 
         <td>

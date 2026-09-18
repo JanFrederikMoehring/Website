@@ -29,11 +29,11 @@
 require_once __DIR__ . '/../database.php';
 
 // ID-Value aus der URL ziehen
-$Number = $_GET['id'];
+$number = $_GET['id'];
 
 // Zur ID gehörende Tabellenspalte mit Prepared Statement auswählen
 $stmt = $db->prepare('SELECT * FROM todos WHERE id = :Number');
-$stmt->execute([$Number]);
+$stmt->execute([$number]);
 
 // Ausgewählte Spalte liefern
 $todo = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -41,14 +41,14 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <form method="post" style="color:#C99E10; font-family:Roboto;">
-    <label for="Title">Title</label>
-    <input type="text" id="Title" name="Title" value="<?= $todo['Title'] ?>">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" value="<?= $todo['title'] ?>">
 
-    <label for="Description">Description</label>
-    <input type="text" id="Description" name="Description" value="<?= $todo['Description'] ?>">
+    <label for="description">Description</label>
+    <input type="text" id="description" name="description" value="<?= $todo['description'] ?>">
 
-    <label for="Checkbox">Status</label>
-    <input type="checkbox" <?= $todo['Status'] == 1 ? 'checked' : '' ?> id="Checkbox" name="Checkbox" style="justify-self: start;">
+    <label for="checkbox">Status</label>
+    <input type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> id="checkbox" name="checkbox" style="justify-self: start;">
 
     <input type="submit" value="Send" id="submit"
            style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column:2">
@@ -60,21 +60,21 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Variablen die in die Tabelle eingeschrieben werden definieren
-    $Title = $_POST['Title'];
-    $Description = $_POST['Description'];
-    $Status = isset($_POST['Checkbox']) ? 1 : 0;
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $Status = isset($_POST['checkbox']) ? 1 : 0;
 
     // Prepared Statements
     $stmt = $db->prepare("UPDATE todos
-        SET Title = :Title,
-            Description = :Description,
-            Status = :Status
-        WHERE id = $Number");
+        SET title = :title,
+            description = :description,
+            status = :status
+        WHERE id = $number");
 
     // Daten in Tabelle schreiben
-    $stmt->bindValue('Title', $Title);
-    $stmt->bindValue('Description', $Description);
-    $stmt->bindValue('Status', $Status);
+    $stmt->bindValue('title', $title);
+    $stmt->bindValue('description', $description);
+    $stmt->bindValue('status', $status);
     $stmt->execute();
 
     // Redirect beim Drücken des Buttons
