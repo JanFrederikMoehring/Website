@@ -15,11 +15,11 @@
 
 <body>
 
-<a href="/" style="text-decoration: none; color: #C99E10; font-size: 25px;">
+<a href="/">
         ⌂
     </a>
 
-<a href="/todo.php" style="text-decoration: none; color: #C99E10; font-size: 25px;">
+<a href="/todo.php">
         ↺
     </a>
 <br><br>
@@ -51,7 +51,7 @@ header('Location: /todo.php');
 ?>
 
 <form method="post">
-    <button type="submit" name="confirmation" value="false">
+    <button class="button" type="submit" name="confirmation" value="false">
         <input type="hidden" name="delete" value="<?= $number ?>">
         Löschen
         </button>
@@ -59,7 +59,7 @@ header('Location: /todo.php');
 
 
 <form method="post">
-    <button type="submit" name="cancellation" value="false">
+    <button class="button" type="submit" name="cancellation" value="false">
         <input type="hidden" name="delete" value="<?= $number ?>">
         Abbrechen
         </button>

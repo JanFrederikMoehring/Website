@@ -8,172 +8,91 @@
 
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Limelight&display=swap"
-        rel="stylesheet"
-    >
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
     <link href="/app.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <h1 style="color: #C99E10; font-family: Limelight;">
-        What's your favourite food?
-    </h1>
+    <h1>What's your favourite food?</h1>
 
-    <form method="post">
+    <h4>
+        <form class="grid" method="post">
+            <input class="input" type="text" name="Food" value="" placeholder="Pizza...">
+            <input class="button" type="submit" value="send" id="idSubmit">
+        </form>
 
-        <input
-            type="text"
-            name="Food"
-            value=""
-            placeholder="Pizza..."
-        >
-
-        <input
-            type="submit"
-            value="Send"
-            id="idSubmit"
-            style="background-color:#C99e10; font-family:Roboto; Border:1px"
-        >
-
-    </form>
-
-    <h3 style="color: #C99E10; font-family: Roboto;">
-
-        <?php
-
-        if (empty($_POST['Food'])) {
-            echo 'Please fill in the gap now';
-        } else {
-            echo strrev($_POST['Food']) . ', really?';
-        }
-
-        ?>
+        <p>
+            <?php
+            if (empty($_POST['Food'])) {
+                echo 'Please fill in the gap now';
+            } else {
+                echo strrev($_POST['Food']) . ', really?';
+            }
+            ?>
+        </p>
 
         <br>
+        <hr>
         <br>
-        _________________________________________________
 
-    </h3>
+        <p>
+            <form class="grid" action="/create.php" method="post">
+                <input class="input" type="email" name="email" value="" placeholder="E-Mail (only Example)">
+                <input class="input" type="password" id="pwd" name="password" value="" placeholder="Password">
+                <input class="button" type="submit" value="send" id="idSubmit">
+            </form>
 
-    <br>
+            <?php
+            // Email Error angeben
+            if ($_SERVER['REQUEST_URI'] != '/') {
+                echo 'You have to enter a correct email';
+            };
 
-    <form action="/create.php" method="post">
+            require_once __DIR__ . '/../database.php';
 
-        <input
-            type="email"
-            name="email"
-            value=""
-            placeholder="E-Mail (only Example)"
-        >
+            $stmt = $db->query('SELECT email from users');
+            $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
+            ?>
+        </p>
 
-        <input
-            type="password"
-            id="pwd"
-            name="password"
-            value=""
-            placeholder="Password"
-        >
+        <br>
 
-        <input
-            type="submit"
-            value="Send"
-            id="idSubmit"
-            style="background-color:#C99e10; font-family:Roboto; Border:1px"
-        >
-
-    </form>
-
-    <h4 style="color: #C99E10; font-family: Roboto;">
-    <?php
-
-    // Email Error angeben
-    if ($_SERVER['REQUEST_URI'] != '/') {
-        echo 'You have to enter a correct email';
-    };
-
-require_once __DIR__ . '/../database.php';
-
-    $stmt = $db->query('SELECT email from users');
-    $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
-
-    ?>
-    </h4>
-
-    <h5>
-
-        <details style="color: #C99E10; font-family: Roboto;">
-
+        <details>
             <summary>Click here to see the other example e-mails</summary>
-
             <ul>
-
-                <?php foreach($emaillist as $customers): ?>
-
+                <?php foreach ($emaillist as $customers): ?>
                     <li><?php echo($customers) ?></li>
-
                 <?php endforeach; ?>
-
             </ul>
-
         </details>
 
-    </h5>
+        <br>
+        <hr>
+        <br>
 
-    <h3 style="color: #C99E10; font-family: Roboto;">
+        <progress value="75" max="100" style="accent-color: #9198E5;"></progress>
 
-        _________________________________________________
-
-    </h3>
-
-    <br>
-
-    <progress
-        value="75"
-        max="100"
-        style="accent-color: #C99E10;"
-    ></progress>
-
-    <h4 style="display: inline; color: #C99E10; font-family: Roboto;">
         80% of my website completed. Now just do what is written below.
+
+        <br>
     </h4>
 
-    <br>
-
-    <style>
-        a:visited, a:visited, a:hover, a:active, a:link {
-            color: white;
-            background-color: transparent;
-            text-decoration: underline;
-        }
-    </style>
-
-    <h4 style="color: white; font-family: Limelight;">
-
+    <h4 style="font-family: Limelight;">
         Visit my
-
-        <a href="https://github.com/JanFrederikMoehring" target="_blank">
-            GitHub
-        </a>
-
+        <a href="https://github.com/JanFrederikMoehring" target="_blank">GitHub</a>
         and my
+        <a href="https://www.linkedin.com/in/jan-frederik-möhring" target="_blank">LinkedIn</a>
 
-        <a href="https://www.linkedin.com/in/jan-frederik-möhring" target="_blank">
-            LinkedIn
-        </a>
-                
-        </br></br>
+        <br>
+        <br>
 
-        <a href="/todo.php">
-            Todo
-        </a>
-
+        <a href="/todo.php">Todo</a>
     </h4>
 
 </body>
+
 </html>

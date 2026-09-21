@@ -15,11 +15,11 @@
 
 <body>
 
-<a href="/" style="text-decoration: none; color: #C99E10; font-size: 25px;">
+<a href="/">
         ⌂
     </a>
 
-<a href="/todo.php" style="text-decoration: none; color: #C99E10; font-size: 25px;">
+<a href="/todo.php">
         ↺
     </a>
 <br><br>
@@ -40,17 +40,17 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
-<form method="post" style="color:#C99E10; font-family:Roboto;">
+<form class="grid" method="post">
     <label for="title">Title</label>
-    <input type="text" id="title" name="title" value="<?= $todo['title'] ?>">
+    <input class="input" type="text" id="title" name="title" value="<?= $todo['title'] ?>">
 
     <label for="description">Description</label>
-    <input type="text" id="description" name="description" value="<?= $todo['description'] ?>">
+    <input class="input" type="text" id="description" name="description" value="<?= $todo['description'] ?>">
 
     <label for="checkbox">Status</label>
     <input type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> id="checkbox" name="checkbox" style="justify-self: start;">
 
-    <input type="submit" value="Send" id="submit"
+    <input class="button" type="submit" value="send" id="submit"
            style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column:2">
 </form>
 

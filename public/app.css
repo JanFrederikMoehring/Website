@@ -1,23 +1,58 @@
 html {
-    width: 100%;
-    height: 100%;
-    background: #1E434C;
-    background-image: 
-    repeating-linear-gradient(0deg, #7272724d 0px 1px, transparent 1px 55px),
-    repeating-linear-gradient(90deg, #7272724d 0px 1px, transparent 1px 55px);
+    background: FFFFFF;
 }
 
-form {
+.grid {
     display: grid;
-    grid-template-columns: 100px 250px;
+    grid-template-columns: 150px 250px;
     gap: 10px;
     width: fit-content;
+    height: 22px;
+    font-family: Roboto;
 }
 
-form label {
-    text-align: left;
+h1 {
+    color: black;
+    font-family: Limelight;
 }
 
-text {
-    color: #C99E10
+h3, h4, h5 {
+    font-family: Roboto;
+}
+
+.button {
+    background: linear-gradient(90deg, #E66465, #9198E5);
+    font-family: Lexend Deca;
+    font-weight: 500;
+    color: white;
+    Border:1px;
+    border-radius: 10px 0px 10px 0px;
+    background-size: 100%;
+    transition: background-size 0.5s ease-in-out; 
+}
+
+.button:hover {
+    background-size: 200%;
+}
+
+.input {
+    border: 1px solid;
+    border-color: black;
+    border-radius: 5px 0px 5px 0px;
+}
+
+.input:focus {
+    background: linear-gradient(90deg, #FBE9E9, #EAECFA);
+    border: 2px solid;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.5s ease-out;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #E66465;
 }
