@@ -1,5 +1,5 @@
 html {
-    background: FFFFFF;
+    background: white;
 }
 
 .grid {
@@ -7,28 +7,28 @@ html {
     grid-template-columns: 150px 250px;
     gap: 10px;
     width: fit-content;
-    height: 22px;
-    font-family: Roboto;
+    min-height: 22px;
+    font-family: Roboto, sans-serif;
 }
 
 h1 {
     color: black;
-    font-family: Limelight;
+    font-family: Limelight, sans-serif;
 }
 
 h3, h4, h5 {
-    font-family: Roboto;
+    font-family: Roboto, sans-serif;
 }
 
 .button {
     background: linear-gradient(90deg, #E66465, #9198E5);
-    font-family: Lexend Deca;
+    font-family: Lexend Deca, sans-serif;
     font-weight: 500;
     color: white;
-    Border:1px;
+    border: 1px solid black;
     border-radius: 10px 0px 10px 0px;
     background-size: 100%;
-    transition: background-size 0.5s ease-in-out; 
+    transition: background-size 0.5s ease-in-out;
 }
 
 .button:hover {
@@ -43,14 +43,13 @@ h3, h4, h5 {
 
 .input:focus {
     background: linear-gradient(90deg, #FBE9E9, #EAECFA);
-    border: 2px solid;
+    border: 2px solid black;
 }
 
 a {
     color: black;
     text-decoration: none;
     transition: color 0.5s ease-out;
-    text-decoration: none;
 }
 
 a:hover {
