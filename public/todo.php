@@ -44,7 +44,7 @@ require_once __DIR__ . '/../database.php';
         <input type="submit" value="send" id="submit" class="button" style="grid-column: 2">
     </form>
 
-    <br><br><br><br><br>
+    <br><br>
 
     <table class="grid">
         <tr>
