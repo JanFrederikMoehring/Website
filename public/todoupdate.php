@@ -48,7 +48,7 @@ $todo = $stmt->fetch(PDO::FETCH_ASSOC);
     <input class="input" type="text" id="description" name="description" value="<?= $todo['description'] ?>">
 
     <label for="checkbox">Status</label>
-    <input type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> id="checkbox" name="checkbox" style="justify-self: start;">
+    <input class="checkbox" type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> id="checkbox" name="checkbox" style="justify-self: start;">
 
     <input class="button" type="submit" value="send" id="submit"
            style="background-color:#C99E10; font-family:Roboto; border:1px; grid-column:2">

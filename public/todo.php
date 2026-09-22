@@ -39,7 +39,7 @@ require_once __DIR__ . '/../database.php';
         <input class="input" type="text" id="description" name="description" placeholder="Your Description">
 
         <label for="checkbox">Status</label>
-        <input type="checkbox" id="checkbox" name="checkbox" style="justify-self: start" value="true">
+        <input class="checkbox" type="checkbox" id="checkbox" name="checkbox" style="justify-self: start" value="true">
 
         <input type="submit" value="send" id="submit" class="button" style="grid-column: 2">
     </form>
@@ -72,7 +72,7 @@ while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
         <td><?= $todo['date'] ?></td>
 
         <td>
-            <input type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> disabled>
+            <input class="checkbox" type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> disabled>
         </td>
 
         <td>
