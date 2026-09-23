@@ -1,5 +1,6 @@
 html {
-    background: white;
+   background: radial-gradient(#FBE9E9, #EAECFA);
+   background-size: 100vw 100vw;
 }
 
 .grid {
