@@ -1,3 +1,7 @@
+<?php
+    require_once __DIR__ . '/../database.php';
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -47,15 +51,13 @@
             </form>
 
             <?php
+            
             // Email Error angeben
             if ($_SERVER['REQUEST_URI'] != '/') {
                 echo 'You have to enter a correct email';
             };
 
-            require_once __DIR__ . '/../database.php';
-
-            $stmt = $db->query('SELECT email from users');
-            $emaillist = ($stmt->fetchAll(PDO::FETCH_COLUMN));
+            $emaillist = $db->getEmails();
             ?>
         </p>
 

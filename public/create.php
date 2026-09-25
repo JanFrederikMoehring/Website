@@ -14,16 +14,6 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 };
 
 // Prepared Statements
-$stmt = $db->prepare('INSERT INTO users (
-    email,
-    pw
-) VALUES (
-    :email,
-    :pw
-)');
-
-$stmt->bindValue('email', $email);
-$stmt->bindValue('pw', $pw);
-$stmt->execute();
+$db->createUser($email, $pw);
 
 header('Location: /');

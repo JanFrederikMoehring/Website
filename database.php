@@ -3,23 +3,20 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$db = new PDO('sqlite:' . __DIR__ . '/public/database/database.sqlite');
+require_once  __DIR__ . '/src/User.php';
+require_once  __DIR__ . '/src/Address.php';
+require_once  __DIR__ . '/src/Animal.php';
+require_once  __DIR__ . '/src/Cat.php';
+require_once  __DIR__ . '/src/Dog.php';
+require_once  __DIR__ . '/src/Database.php';
+
+$db = new Database();
 
 // Users Tabelle erstellen
-$db->query('CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        email VARCHAR UNIQUE,
-        pw VARCHAR
-)   ');
+$db->createUsersTable();
 
 // To Dos Tabelle erstellen
-$db->query('CREATE TABLE IF NOT EXISTS todos (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT,
-    description TEXT,
-    date TEXT,
-    status TEXT
-)');
+$db->createToDosTable();
 
 function isPost(): bool 
 {
