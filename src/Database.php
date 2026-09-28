@@ -125,7 +125,7 @@ class Database
         $stmt->bindValue('title', $title);
         $stmt->bindValue('description', $description);
         $stmt->bindValue('status', $status);
-    
+        $stmt->bindValue('uuid', $number);
         $stmt->execute();
     }
 
