@@ -120,11 +120,12 @@ class Database
             SET title = :title,
                 description = :description,
                 status = :status
-            WHERE uuid = $number");
+            WHERE uuid = :uuid");
 
         $stmt->bindValue('title', $title);
         $stmt->bindValue('description', $description);
         $stmt->bindValue('status', $status);
+    
         $stmt->execute();
     }
 
