@@ -19,7 +19,7 @@ jobs:
 
       - name: connect and pull
         run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 
-          "cd /var/www/html && git checkout main && git pull && exit"
+          "cd /var/www/html && git checkout main && git pull && COMPOSER_ALLOW_SUPERUSER=1 composer install && exit"
 
       - name: delete database
         run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
