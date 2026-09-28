@@ -29,25 +29,27 @@ if (strlen($title) < 3) {
 $timestamp = time();
 $date = date('d.m.Y.', $timestamp);
 
-// Prepared Statements
-$stmt = $db->prepare('INSERT INTO todos (
-    title,
-    description,
-    date,
-    status
-) VALUES (
-    :title,
-    :description,
-    :date,
-    :status
-)');
+$db->createToDo($title, $description, $date, $checked);
 
-// Werte in die Tabelle schreiben
-$stmt->bindValue('title', $title);
-$stmt->bindValue('description', $description);
-$stmt->bindValue('date', $date);
-$stmt->bindValue('status', $checked);
-$stmt->execute();
+// // Prepared Statements
+// $stmt = $db->prepare('INSERT INTO todos (
+//     title,
+//     description,
+//     date,
+//     status
+// ) VALUES (
+//     :title,
+//     :description,
+//     :date,
+//     :status
+// )');
+
+// // Werte in die Tabelle schreiben
+// $stmt->bindValue('title', $title);
+// $stmt->bindValue('description', $description);
+// $stmt->bindValue('date', $date);
+// $stmt->bindValue('status', $checked);
+// $stmt->execute();
 
 // Redirect
 header('Location: /todo.php');

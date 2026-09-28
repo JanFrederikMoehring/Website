@@ -8,10 +8,8 @@ require_once  __DIR__ . '/src/Database.php';
 
 $db = new Database();
 
-// Users Tabelle erstellen
 $db->createUsersTable();
 
-// To Dos Tabelle erstellen
 $db->createToDosTable();
 
 function isPost(): bool 

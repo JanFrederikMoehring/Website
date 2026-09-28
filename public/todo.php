@@ -56,36 +56,7 @@ require_once __DIR__ . '/../database.php';
         </tr>
 <?php
 
-$stmt = $db->query('SELECT * FROM todos');
-
-
-
-while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    // Variable für Übergabeparameter definieren
-    $number = $todo['id'];
-?>
-
-    <tr>
-        <td><?= $todo['id'] ?></td>
-        <td><?= $todo['title'] ?></td>
-        <td><?= $todo['description'] ?></td>
-        <td><?= $todo['date'] ?></td>
-
-        <td>
-            <input class="checkbox" type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> disabled>
-        </td>
-
-        <td>
-            <a href="/todoupdate.php?id=<?=urlencode($number) ?>">⌨</a>
-        </td>
-
-         <td>
-            <a href="/tododelete.php?id=<?=urlencode($number) ?>">🗑</a>
-        </td>
-    </tr>
-
-<?php
-}
+$db->getToDos();
 ?>
 </table>
 </body>

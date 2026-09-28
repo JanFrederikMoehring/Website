@@ -33,9 +33,7 @@ $number = ($_GET['id']);
 $confirmation = (isset($_POST['confirmation']));
 
 if ($confirmation == true) {
-$stmt = $db->prepare('DELETE FROM todos WHERE id = :number');
-$stmt->execute([$number]);
-
+    $db->columnById('DELETE FROM todos WHERE id = :number', $number);
 // Redirect
 header('Location: /todo.php');
 }
