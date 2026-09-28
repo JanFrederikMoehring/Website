@@ -31,26 +31,6 @@ $date = date('d.m.Y.', $timestamp);
 
 $db->createToDo($title, $description, $date, $checked);
 
-// // Prepared Statements
-// $stmt = $db->prepare('INSERT INTO todos (
-//     title,
-//     description,
-//     date,
-//     status
-// ) VALUES (
-//     :title,
-//     :description,
-//     :date,
-//     :status
-// )');
-
-// // Werte in die Tabelle schreiben
-// $stmt->bindValue('title', $title);
-// $stmt->bindValue('description', $description);
-// $stmt->bindValue('date', $date);
-// $stmt->bindValue('status', $checked);
-// $stmt->execute();
-
 // Redirect
 header('Location: /todo.php');
 

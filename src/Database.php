@@ -6,11 +6,13 @@ class Database
 
     public function __construct()
     {
-        $this->pdo = new PDO(
-            'sqlite:' . __DIR__ . '/../public/database/database.sqlite');
+        $this->pdo = new PDO('sqlite:' . __DIR__ . '/../public/database/database.sqlite');
 
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function getEmails(): array
     {
         $stmt = $this->pdo->query('SELECT email from users');
@@ -41,49 +43,38 @@ class Database
     public function createUser(string $email, string $pw): void
     {
         $stmt = $this->pdo->prepare('INSERT INTO users (
-        email,
-        pw
-    ) VALUES (
-        :email,
-        :pw
-    )');
+            email,
+            pw
+        ) VALUES (
+            :email,
+            :pw
+        )');
 
-    $stmt->bindValue('email', $email);
-    $stmt->bindValue('pw', $pw);
-    $stmt->execute();
+        $stmt->bindValue('email', $email);
+        $stmt->bindValue('pw', $pw);
+        $stmt->execute();
     }
 
-    public function getToDos()
+    /**
+     * @return array<int, Todo>
+     */
+    public function getToDos(): array
     {
-        
        $stmt = $this->pdo->query('SELECT * FROM todos');
 
-        while ($todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            // Variable für Übergabeparameter definieren
-            $number = $todo['id'];
-        ?>
+        $todos = [];
 
-            <tr>
-                <td><?= $todo['id'] ?></td>
-                <td><?= $todo['title'] ?></td>
-                <td><?= $todo['description'] ?></td>
-                <td><?= $todo['date'] ?></td>
-
-                <td>
-                    <input class="checkbox" type="checkbox" <?= $todo['status'] == 1 ? 'checked' : '' ?> disabled>
-                </td>
-
-                <td>
-                    <a href="/todoupdate.php?id=<?=urlencode($number) ?>">⌨</a>
-                </td>
-
-                <td>
-                    <a href="/tododelete.php?id=<?=urlencode($number) ?>">🗑</a>
-                </td>
-            </tr>
-
-        <?php
+        while (false !== $todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $todos[] = new Todo(
+                $todo['id'],
+                $todo['title'],
+                $todo['description'] === '' ? null : $todo['description'],
+                $todo['date'],
+                $todo['status'] === '1' ? true : false,
+            );
         }
+
+        return $todos;
     }
 
     public function columnById(string $argument, int $number)
@@ -93,7 +84,7 @@ class Database
         return $todo = $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
-    public function createToDo(string $title, string $description, string $date, int $checked): void
+    public function createToDo(string $title, ?string $description, string $date, int $checked): void
     {
         $stmt = $this->pdo->prepare('INSERT INTO todos (
             title,

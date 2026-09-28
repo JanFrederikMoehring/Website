@@ -1,3 +1,11 @@
+<?php
+
+require_once __DIR__ . '/../database.php';
+
+$todos = $db->getToDos();
+
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -20,12 +28,6 @@
         ⌂
     </a>
 <br><br>
-
-<?php
-
-require_once __DIR__ . '/../database.php';
-
-?>
 
 <style>
  
@@ -54,10 +56,26 @@ require_once __DIR__ . '/../database.php';
             <th>Date</th>
             <th>Status</th>
         </tr>
-<?php
+<?php foreach($todos as $todo): ?>
+    <tr>
+        <td><?= $todo->id ?></td>
+        <td><?= $todo->title ?></td>
+        <td><?= $todo->description ?? '-' ?></td>
+        <td><?= $todo->date ?></td>
 
-$db->getToDos();
-?>
+        <td>
+            <input class="checkbox" type="checkbox" <?= $todo->status ? 'checked' : '' ?> disabled>
+        </td>
+
+        <td>
+            <a href="/todoupdate.php?id=<?= $todo->id ?> ?>">⌨</a>
+        </td>
+
+        <td>
+            <a href="/tododelete.php?id=<?= $todo->id ?>">🗑</a>
+        </td>
+    </tr>
+<?php endforeach; ?>
 </table>
 </body>
 </html>
