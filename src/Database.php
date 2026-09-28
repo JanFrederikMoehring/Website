@@ -114,7 +114,7 @@ class Database
         $stmt->execute();
     }
 
-    public function updateToDos( int $number, string $title, string $description, int $status)
+    public function updateToDos( string $number, string $title, string $description, int $status)
     {
         $stmt = $this->pdo->prepare("UPDATE todos
             SET title = :title,
