@@ -1,17 +1,13 @@
 <?php
 
+use Website\Database;
+
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once  __DIR__ . '/src/User.php';
-require_once  __DIR__ . '/src/Todo.php';
-require_once  __DIR__ . '/src/Database.php';
+require_once  __DIR__ . '/vendor/autoload.php';
 
-$db = new Database();
-
-$db->createUsersTable();
-
-$db->createToDosTable();
+// FQCN - Full quallified class name
 
 function isPost(): bool 
 {
@@ -24,7 +20,7 @@ function isPost(): bool
 
 function getPostParam(string $key): null|string
 {
-    if (array_key_exists($key,$_POST) && $_POST[$key] !== '') {
+    if (\array_key_exists($key,$_POST) && $_POST[$key] !== '') {
         return $_POST[$key];
     } else {
         return null;
@@ -36,3 +32,8 @@ function dd(mixed $value): never
     var_dump($value);
     exit;
 }
+
+$db = new Database();
+
+$db->createUsersTable();
+$db->createToDosTable();

@@ -28,12 +28,12 @@
 <?php
 require_once __DIR__ . '/../database.php';
 
-$number = ($_GET['id']);
+$number = ($_GET['uuid']);
 
 $confirmation = (isset($_POST['confirmation']));
 
 if ($confirmation == true) {
-    $db->columnById('DELETE FROM todos WHERE id = :number', $number);
+    $db->columnById('DELETE FROM todos WHERE uuid = :number', $number);
 // Redirect
 header('Location: /todo.php');
 }

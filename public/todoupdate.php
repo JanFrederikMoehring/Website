@@ -29,10 +29,10 @@
 require_once __DIR__ . '/../database.php';
 
 // ID-Value aus der URL ziehen
-$number = $_GET['id'];
+$number = $_GET['uuid'];
 
 // Zur ID gehörende Tabellenspalte mit Prepared Statement auswählen
-$todo = $db->columnById('SELECT * FROM todos WHERE id = :Number', $number);
+$todo = $db->columnById('SELECT * FROM todos WHERE uuid = :number', $number);
 
 ?>
 

@@ -51,14 +51,16 @@ $todos = $db->getToDos();
     <table class="grid">
         <tr>
             <th>ID</th>
+            <th>UUID</th>
             <th>Title</th>
             <th>Description</th>
             <th>Date</th>
             <th>Status</th>
         </tr>
-<?php foreach($todos as $todo): ?>
+<?php foreach($db->getToDos() as $todo): ?>
     <tr>
         <td><?= $todo->id ?></td>
+        <td><?= $todo->uuid ?></td>
         <td><?= $todo->title ?></td>
         <td><?= $todo->description ?? '-' ?></td>
         <td><?= $todo->date ?></td>
@@ -68,11 +70,11 @@ $todos = $db->getToDos();
         </td>
 
         <td>
-            <a href="/todoupdate.php?id=<?= $todo->id ?> ?>">⌨</a>
+            <a href="/todoupdate.php?uuid=<?= $todo->uuid ?>">⌨</a>
         </td>
 
         <td>
-            <a href="/tododelete.php?id=<?= $todo->id ?>">🗑</a>
+            <a href="/tododelete.php?uuid=<?= $todo->uuid ?>">🗑</a>
         </td>
     </tr>
 <?php endforeach; ?>
