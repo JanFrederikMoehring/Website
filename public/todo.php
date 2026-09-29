@@ -70,7 +70,7 @@ $todos = $db->getToDos();
         </td>
 
         <td>
-            <a href="/todoupdate.php?uuid=<?= $todo->uuid ?>">⌨</a>
+            <a href="/todoupdate.php?uuid=<?= $todo->uuid ?>">⌨️</a>
         </td>
 
         <td>
