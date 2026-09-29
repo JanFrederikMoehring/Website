@@ -41,7 +41,7 @@ $todo = $db->getToDoByUuid($uuid);
 
 <form class="grid" method="post">
     <label for="title">Title</label>
-    <input class="input" type="text" id="title" name="title" value="<?= $todo['title'] ?>">
+    <input class="input" type="text" id="title" name="title" value="<?= $todo['title'] ?>" minlength="3" required>
 
     <label for="description">Description</label>
     <input class="input" type="text" id="description" name="description" value="<?= $todo['description'] ?>">
@@ -62,6 +62,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $description = $_POST['description'];
     $status = isset($_POST['checkbox']) ? 1 : 0;
+
+    // Leeren Title ausschließen
+    if ($title === null || trim($title) === '') {
+        header('Location: /todoupdate.php?uuid=' . $uuid . '&error=no-title');
+        exit;
+    
+    }
+
+    // Zu kurzen Title ausschließen
+    if (strlen($title) < 3) {
+        header('Location: /todoupdate.php?uuid=' . $uuid . '&error=short-title');
+        exit;
+    }
 
     $db->updateToDo($uuid, $title, $description, $status);
 
