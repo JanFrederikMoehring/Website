@@ -1,2 +1,4 @@
 database/*.sqlite
 vendor
+.DS_Store
+.idea/
