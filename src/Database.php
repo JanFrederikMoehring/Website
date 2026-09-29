@@ -11,10 +11,13 @@ class Database
 
     public function __construct()
     {
-        $this->pdo = new PDO('sqlite:' . __DIR__ . '/../public/database/database.sqlite');
+        $this->pdo = new PDO('sqlite:' . __DIR__ . '/../database/database.sqlite');
 
     }
 
+    /**
+     * @return void
+     */
     public function createUser(string $email, string $pw): void
     {
         $stmt = $this->pdo->prepare('INSERT INTO users (
@@ -40,6 +43,9 @@ class Database
         return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
+    /**
+     * @return void
+     */
     public function createUsersTable(): void
     {
         $this->pdo->query('CREATE TABLE IF NOT EXISTS users (
@@ -49,6 +55,9 @@ class Database
     )   ');
     }
 
+    /**
+     * @return void
+     */
     public function createToDosTable(): void
     {
         $this->pdo->query('CREATE TABLE IF NOT EXISTS todos (
@@ -61,6 +70,9 @@ class Database
         ) ');
     }
 
+    /**
+     * @return void
+     */
     public function createToDo(string $title, ?string $description, string $date, bool $status): void
     {
         $stmt = $this->pdo->prepare('INSERT INTO todos (
@@ -109,6 +121,9 @@ class Database
         return $todos;
     }
 
+    /**
+     * @return ?array<int, mixed>|null>
+     */
     public function getToDoByUuid(string $uuid): ?array
     {
         $stmt = $this->pdo->prepare(
@@ -124,6 +139,9 @@ class Database
         return $todo === false ? null : $todo;
     }
 
+    /**
+     * @return void
+     */
     public function updateToDo(string $uuid, string $title, ?string $description, bool $status): void
     {
         $stmt = $this->pdo->prepare("UPDATE todos
@@ -140,6 +158,9 @@ class Database
         ]);
     }
 
+    /**
+     * @return void
+     */
     public function deleteToDo(string $uuid): void
     {
         $stmt = $this->pdo->prepare(

@@ -1,9 +1,9 @@
 <?php
 
+require_once __DIR__ . '/../init.php';
+
 $email = $_POST['email'];
 $pw = password_hash(($_POST['password']), PASSWORD_DEFAULT);
-
-require_once __DIR__ . '/../database.php';
 
 // Email Validierung
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {

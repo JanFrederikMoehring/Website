@@ -1,3 +1,9 @@
+<?php
+
+require_once __DIR__ . '/../init.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -26,14 +32,12 @@
 
 
 <?php
-require_once __DIR__ . '/../database.php';
-
-$number = ($_GET['uuid']);
+$uuid = ($_GET['uuid']);
 
 $confirmation = (isset($_POST['confirmation']));
 
 if ($confirmation == true) {
-    $db->deleteToDo($number);
+    $db->deleteToDo($uuid);
 // Redirect
 header('Location: /todo.php');
 }
@@ -50,7 +54,7 @@ header('Location: /todo.php');
 
 <form method="post">
     <button class="button" type="submit" name="confirmation" value="false">
-        <input type="hidden" name="delete" value="<?= $number ?>">
+        <input type="hidden" name="delete" value="<?= $uuid ?>">
         Löschen
         </button>
     </form>
@@ -58,7 +62,7 @@ header('Location: /todo.php');
 
 <form method="post">
     <button class="button" type="submit" name="cancellation" value="false">
-        <input type="hidden" name="delete" value="<?= $number ?>">
+        <input type="hidden" name="delete" value="<?= $uuid ?>">
         Abbrechen
         </button>
     </form>

@@ -1,3 +1,9 @@
+<?php
+
+require_once __DIR__ . '/../init.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 
@@ -25,9 +31,6 @@
 <br><br>
 
 <?php
-
-require_once __DIR__ . '/../database.php';
-
 // ID-Value aus der URL ziehen
 $uuid = $_GET['uuid'];
 
