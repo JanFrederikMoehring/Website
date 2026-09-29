@@ -11,7 +11,7 @@ if (isPost() === false) {
 // Variablen definieren
 $title = getPostParam('title');
 $description = getPostParam('description');
-$checked = getPostParam('checkbox') !== null;
+$status = getPostParam('checkbox') !== null;
 
 // Leeren Title ausschließen
 if ($title === null) {
@@ -29,7 +29,7 @@ if (strlen($title) < 3) {
 $timestamp = time();
 $date = date('d.m.Y.', $timestamp);
 
-$db->createToDo($title, $description, $date, $checked);
+$db->createToDo($title, $description, $date, $status);
 
 // Redirect
 header('Location: /todo.php');

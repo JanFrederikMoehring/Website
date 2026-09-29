@@ -33,7 +33,7 @@ $number = ($_GET['uuid']);
 $confirmation = (isset($_POST['confirmation']));
 
 if ($confirmation == true) {
-    $db->columnById('DELETE FROM todos WHERE uuid = :number', $number);
+    $db->deleteToDo($number);
 // Redirect
 header('Location: /todo.php');
 }

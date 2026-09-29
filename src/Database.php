@@ -7,12 +7,28 @@ use Ramsey\Uuid\Uuid;
 
 class Database
 {
-    private \PDO $pdo;
+    private PDO $pdo;
 
     public function __construct()
     {
-        $this->pdo = new \PDO('sqlite:' . __DIR__ . '/../public/database/database.sqlite');
+        $this->pdo = new PDO('sqlite:' . __DIR__ . '/../public/database/database.sqlite');
 
+    }
+
+    public function createUser(string $email, string $pw): void
+    {
+        $stmt = $this->pdo->prepare('INSERT INTO users (
+            email,
+            pw
+        ) VALUES (
+            :email,
+            :pw
+        )');
+
+        $stmt->execute([
+            'email' => $email,
+            'pw' => $pw,
+        ]);
     }
 
     /**
@@ -21,7 +37,7 @@ class Database
     public function getEmails(): array
     {
         $stmt = $this->pdo->query('SELECT email from users');
-        return $stmt->fetchAll(\PDO::FETCH_COLUMN);
+        return $stmt->fetchAll(PDO::FETCH_COLUMN);
     }
 
     public function createUsersTable(): void
@@ -45,52 +61,7 @@ class Database
         ) ');
     }
 
-    public function createUser(string $email, string $pw): void
-    {
-        $stmt = $this->pdo->prepare('INSERT INTO users (
-            email,
-            pw
-        ) VALUES (
-            :email,
-            :pw
-        )');
-
-        $stmt->bindValue('email', $email);
-        $stmt->bindValue('pw', $pw);
-        $stmt->execute();
-    }
-
-    /**
-     * @return array<int, Todo>
-     */
-    public function getToDos(): array
-    {
-       $stmt = $this->pdo->query('SELECT * FROM todos');
-
-        $todos = [];
-
-        while (false !== $todo = $stmt->fetch(\PDO::FETCH_ASSOC)) {
-            $todos[] = new Todo(
-                $todo['id'],
-                $todo['uuid'],
-                $todo['title'],
-                $todo['description'] === '' ? null : $todo['description'],
-                $todo['date'],
-                $todo['status'] === '1' ? true : false,
-            );
-        }
-
-        return $todos;
-    }
-
-    public function columnById(string $argument, string $number)
-    {
-        $stmt = $this->pdo->prepare($argument);
-        $stmt->execute([$number]);
-        return $todo = $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-
-    public function createToDo(string $title, ?string $description, string $date, int $checked): void
+    public function createToDo(string $title, ?string $description, string $date, bool $status): void
     {
         $stmt = $this->pdo->prepare('INSERT INTO todos (
             uuid,
@@ -106,15 +77,54 @@ class Database
             :status
         )');
 
-        $stmt->bindValue('uuid', Uuid::uuid4());
-        $stmt->bindValue('title', $title);
-        $stmt->bindValue('description', $description);
-        $stmt->bindValue('date', $date);
-        $stmt->bindValue('status', $checked);
-        $stmt->execute();
+        $stmt->execute([
+            'uuid' => Uuid::uuid4()->toString(),
+            'title' => $title,
+            'description' => $description,
+            'date' => $date,
+            'status' => $status,
+        ]);
     }
 
-    public function updateToDos( string $number, string $title, string $description, int $status)
+    /**
+     * @return array<int, Todo>
+     */
+    public function getToDos(): array
+    {
+       $stmt = $this->pdo->query('SELECT * FROM todos');
+
+        $todos = [];
+
+        while (false !== $todo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $todos[] = new Todo(
+                $todo['id'],
+                $todo['uuid'],
+                $todo['title'],
+                $todo['description'] === '' ? null : $todo['description'],
+                $todo['date'],
+                $todo['status'] === '1' ? true : false,
+            );
+        }
+
+        return $todos;
+    }
+
+    public function getToDoByUuid(string $uuid): ?array
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT * FROM todos WHERE uuid = :uuid'
+            );
+
+        $stmt->execute([
+            'uuid' => $uuid,    
+        ]);
+        
+        $todo = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $todo === false ? null : $todo;
+    }
+
+    public function updateToDo(string $uuid, string $title, ?string $description, bool $status): void
     {
         $stmt = $this->pdo->prepare("UPDATE todos
             SET title = :title,
@@ -122,11 +132,23 @@ class Database
                 status = :status
             WHERE uuid = :uuid");
 
-        $stmt->bindValue('title', $title);
-        $stmt->bindValue('description', $description);
-        $stmt->bindValue('status', $status);
-        $stmt->bindValue('uuid', $number);
-        $stmt->execute();
+        $stmt->execute([
+            'uuid' => $uuid,
+            'title' => $title,
+            'description' => $description,
+            'status' => $status,
+        ]);
+    }
+
+    public function deleteToDo(string $uuid): void
+    {
+        $stmt = $this->pdo->prepare(
+            'DELETE FROM todos WHERE uuid = :uuid'
+        );
+
+        $stmt->execute([
+            'uuid' => $uuid,
+        ]);
     }
 
 }

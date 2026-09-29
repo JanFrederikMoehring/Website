@@ -29,10 +29,10 @@
 require_once __DIR__ . '/../database.php';
 
 // ID-Value aus der URL ziehen
-$number = $_GET['uuid'];
+$uuid = $_GET['uuid'];
 
 // Zur ID gehörende Tabellenspalte mit Prepared Statement auswählen
-$todo = $db->columnById('SELECT * FROM todos WHERE uuid = :number', $number);
+$todo = $db->getToDoByUuid($uuid);
 
 ?>
 
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'];
     $status = isset($_POST['checkbox']) ? 1 : 0;
 
-    $db->updateToDos($number, $title, $description, $status);
+    $db->updateToDo($uuid, $title, $description, $status);
 
     // Redirect beim Drücken des Buttons
     header('Location: /todo.php');
