@@ -38,7 +38,7 @@ $todos = $db->getToDos();
         <input class="input" type="text" id="title" name="title" placeholder="Title">
 
         <label for="description">Description</label>
-        <input class="input" type="text" id="description" name="description" placeholder="Your Description">
+        <input class="input" type="text" id="description" name="description" placeholder="YOUR Description">
 
         <label for="checkbox">Status</label>
         <input class="checkbox" type="checkbox" id="checkbox" name="checkbox" style="justify-self: start" value="true">
