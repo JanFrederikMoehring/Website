@@ -34,6 +34,22 @@ class Database
         ]);
     }
 
+    public function createAdminUser(): void
+    {
+        $stmt = $this->pdo->prepare('INSERT INTO users (
+            email,
+            pw
+        ) VALUES (
+            :email,
+            :pw
+        )');
+
+        $stmt->execute([
+            'email' => 'admin',
+            'pw' => password_hash('admin', PASSWORD_DEFAULT),
+        ]);
+    }
+
     /**
      * @return array<int, string>
      */

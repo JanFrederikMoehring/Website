@@ -44,3 +44,4 @@ $db = new Database();
 
 $db->createUsersTable();
 $db->createToDosTable();
+$db->createAdminUser();
