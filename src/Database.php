@@ -45,7 +45,7 @@ class Database
         )');
 
         $stmt->execute([
-            'email' => 'admin',
+            'email' => 'admin@admin',
             'pw' => password_hash('admin', PASSWORD_DEFAULT),
         ]);
     }
