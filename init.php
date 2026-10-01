@@ -1,13 +1,20 @@
 <?php
 
 use Website\Database;
+use Website\Cookies;
+use Website\User;
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 require_once  __DIR__ . '/vendor/autoload.php';
 
-// FQCN - Full quallified class name
+new Cookies();
+
+if (parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) !== '/login.php' && ($_SESSION['user_id'] ?? null) === null) {
+    header("Location: /login.php");
+    exit;
+}
 
 function isPost(): bool 
 {

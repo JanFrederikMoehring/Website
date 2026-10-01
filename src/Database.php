@@ -55,6 +55,25 @@ class Database
     )   ');
     }
 
+    public function getUser(string $email): ?User
+    {
+        $stmt = $this->pdo->prepare(
+            'SELECT * FROM users WHERE email = :email'
+        );
+        $stmt->execute([
+            'email' => $email,
+        ]);
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user === false) {
+            return null;
+        }
+
+        return new User($user['id'], $user['email'], $user['pw']);
+
+    }
+
     /**
      * @return void
      */
