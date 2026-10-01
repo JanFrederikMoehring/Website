@@ -42,7 +42,9 @@ class Database
         ) VALUES (
             :email,
             :pw
-        )');
+        )
+        ON CONFLICT(email) DO NOTHING
+        ');
 
         $stmt->execute([
             'email' => 'admin@admin',
