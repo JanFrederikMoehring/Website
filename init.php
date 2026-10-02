@@ -11,7 +11,12 @@ require_once  __DIR__ . '/vendor/autoload.php';
 
 new Cookies();
 
-if (parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) !== '/login.php' && ($_SESSION['user_id'] ?? null) === null) {
+$whitelisted_routes = [
+    '/login.php',
+    '/register.php'
+    ];
+
+if (!in_array(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),$whitelisted_routes, true) && ($_SESSION['user_id'] ?? null) === null) {
     header("Location: /login.php");
     exit;
 }

@@ -15,10 +15,7 @@ class Database
 
     }
 
-    /**
-     * @return void
-     */
-    public function createUser(string $email, string $pw): void
+    public function createUser(string $email, string $hashedPassword): int|false
     {
         $stmt = $this->pdo->prepare('INSERT INTO users (
             email,
@@ -28,10 +25,21 @@ class Database
             :pw
         )');
 
-        $stmt->execute([
-            'email' => $email,
-            'pw' => $pw,
-        ]);
+        try {
+            $stmt->execute([
+                'email' => $email,
+                'pw' => $hashedPassword,
+            ]);
+
+            $lastID = $this->pdo->lastInsertId();
+            if ($lastID !== false) {
+                return (int) $lastID;
+            }
+
+            return false;
+        } catch (\PDOException $e) {
+            return false;
+        }
     }
 
     public function createAdminUser(): void

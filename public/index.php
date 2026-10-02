@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../init.php';
 
+dd($_SESSION);
 ?>
 
 <!DOCTYPE html>
@@ -41,9 +42,6 @@ require_once __DIR__ . '/../init.php';
             ?>
         </p>
 
-        <br>
-        <hr>
-        <br>
         <br>
         <hr>
         <br>
