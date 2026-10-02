@@ -61,12 +61,4 @@ if (isPost()) {
             <button type="submit" id="submit" class="button" style="grid-column: 2">Login</button>
         </form>
 
-            <?php
-
-            // Email Error angeben
-            if ($_SERVER['REQUEST_URI'] != '/') {
-                echo 'You have to enter a correct email';
-            };
-            ?>
-
 </body>
