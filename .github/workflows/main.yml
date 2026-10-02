@@ -25,5 +25,9 @@ jobs:
         run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
           'rm -rf /var/www/html/database/database.sqlite'
 
+      - name: run setup.php
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          php setup.php
+
       - name: cleanup
         run: rm -rf ~/.ssh/id_rsa
