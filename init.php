@@ -46,6 +46,3 @@ function dd(mixed $value): never
 }
 
 $db = new Database();
-
-$db->createUsersTable();
-$db->createToDosTable();
