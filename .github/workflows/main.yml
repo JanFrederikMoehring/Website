@@ -23,7 +23,11 @@ jobs:
 
       - name: delete database
         run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
-          'rm -rf /var/www/html/database/database.sqlite'
+          "rm -rf /var/www/html/database/database.sqlite"
+
+      - name: Set database directory permissions
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
+          "chown www-data:www-data /var/www/html/database && chmod 755 /var/www/html/database"
 
       - name: run setup.php
         run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}

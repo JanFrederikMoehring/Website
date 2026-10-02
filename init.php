@@ -1,5 +1,4 @@
 <?php
-exit;
 use Website\Database;
 use Website\Cookies;
 
