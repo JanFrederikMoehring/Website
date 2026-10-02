@@ -38,7 +38,7 @@ class Database
 
             return false;
         } catch (\PDOException $e) {
-            return false;
+            die($e->getMessage());
         }
     }
 
