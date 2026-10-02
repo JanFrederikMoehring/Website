@@ -2,21 +2,20 @@
 
 use Website\Database;
 use Website\Cookies;
-use Website\User;
+
+require_once  __DIR__ . '/vendor/autoload.php';
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require_once  __DIR__ . '/vendor/autoload.php';
-
 new Cookies();
 
-$whitelisted_routes = [
+$whitelistedRoutes = [
     '/login.php',
     '/register.php'
-    ];
+];
 
-if (!in_array(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH),$whitelisted_routes, true) && ($_SESSION['user_id'] ?? null) === null) {
+if (!in_array(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), $whitelistedRoutes, true) && ($_SESSION['user_id'] ?? null) === null) {
     header("Location: /login.php");
     exit;
 }

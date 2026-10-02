@@ -33,9 +33,3 @@ $db->createToDo($title, $description, $date, $status);
 
 // Redirect
 header('Location: /todo.php');
-
-?>
-
-</body>
-
-</html>

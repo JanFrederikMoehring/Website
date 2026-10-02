@@ -2,24 +2,27 @@
 
 require_once __DIR__ . '/../init.php';
 
+$uuid = ($_GET['uuid']);
+
+$confirmation = (isset($_POST['confirmation']));
+
+if ($confirmation) {
+    $db->deleteToDo($uuid);
+// Redirect
+    header('Location: /todo.php');
+}
+
+
+$cancellation = (isset($_POST['cancellation']));
+
+if ($cancellation) {
+// Redirect
+    header('Location: /todo.php');
+}
+
+require_once __DIR__ . '/../layouts/header.php';
+
 ?>
-
-<!DOCTYPE html>
-<html lang="de">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>jan-frederik.com | To Do Delete</title>
-
-    <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <link href="/app.css" rel="stylesheet">
-</head>
-
-<body>
 
 <a href="/">
         ⌂
@@ -29,28 +32,6 @@ require_once __DIR__ . '/../init.php';
         ↺
     </a>
 <br><br>
-
-
-<?php
-$uuid = ($_GET['uuid']);
-
-$confirmation = (isset($_POST['confirmation']));
-
-if ($confirmation == true) {
-    $db->deleteToDo($uuid);
-// Redirect
-header('Location: /todo.php');
-}
-
-
-$cancellation = (isset($_POST['cancellation']));
-
-if ($cancellation == true) {
-// Redirect
-header('Location: /todo.php');
-}
-
-?>
 
 <form method="post">
     <button class="button" type="submit" name="confirmation" value="false">
@@ -67,6 +48,8 @@ header('Location: /todo.php');
         </button>
     </form>
 
-</body>
+<?php
 
-</html>
+require_once __DIR__ . '/../layouts/footer.php';
+
+?>

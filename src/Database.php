@@ -37,7 +37,7 @@ class Database
             }
 
             return false;
-        } catch (\PDOException $e) {
+        } catch (\PDOException) {
             return false;
         }
     }
