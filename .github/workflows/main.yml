@@ -27,7 +27,7 @@ jobs:
 
       - name: run setup.php
         run: ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}
-          "cd ./../../ && php setup.php"
+          "cd var/www/html && php setup.php"
 
       - name: cleanup
         run: rm -rf ~/.ssh/id_rsa
